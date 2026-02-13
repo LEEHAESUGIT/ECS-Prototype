@@ -1,0 +1,4 @@
+C:\Programming\RTS_Sorce\obj\Debug\net8.0\RTS_Sorce.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programming\RTS_Sorce\obj\Debug\net8.0\RTS_Sorce.AssemblyInfoInputs.cache
+C:\Programming\RTS_Sorce\obj\Debug\net8.0\RTS_Sorce.AssemblyInfo.cs
+C:\Programming\RTS_Sorce\obj\Debug\net8.0\RTS_Sorce.csproj.CoreCompileInputs.cache

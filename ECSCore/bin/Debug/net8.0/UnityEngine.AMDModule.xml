@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.AMDModule</name>
+    </assembly>
+    <member name="T:UnityEngine.AMD.AMDUnityPlugin">
+      <summary>
+        <para>Provides methods to manage loading and unloading AMD module plugins.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AMD.AMDUnityPlugin.IsLoaded">
+      <summary>
+        <para>Checks whether the AMDUnityPlugin in the AMD native module has been loaded or not.</para>
+      </summary>
+      <returns>
+        <para>Returns true if the plugin has been loaded. Otherwise, returns false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AMD.AMDUnityPlugin.Load">
+      <summary>
+        <para>Attempts to dynamically load the AMDUnityPlugin.</para>
+      </summary>
+      <returns>
+        <para>Returns true if the function loaded the plugin successfully. Otherwise, returns false.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.AMD.FfxFsr2InitializationFlags">
+      <summary>
+        <para>Options that represent subfeatures of FSR2.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FfxFsr2InitializationFlags.DepthInverted">
+      <summary>
+        <para>Flag indicating that if the input depth buffer data provided is inverted. (1 is close, 0 is far).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FfxFsr2InitializationFlags.EnableAutoExposure">
+      <summary>
+        <para>Flag indicating if automatic exposure should be applied to the input color data.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FfxFsr2InitializationFlags.EnableDepthInfinite">
+      <summary>
+        <para>Flag indicating if the depth buffer data is using an infinite far plane.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FfxFsr2InitializationFlags.EnableDisplayResolutionMotionVectors">
+      <summary>
+        <para>Flag indicating if the motion vectors are rendered at display resolution.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FfxFsr2InitializationFlags.EnableDynamicResolution">
+      <summary>
+        <para>Flag indicating if the application uses dynamic resolution scaling.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FfxFsr2InitializationFlags.EnableHighDynamicRange">
+      <summary>
+        <para>Flag indicating if the color provided is using a high-dynamic range.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FfxFsr2InitializationFlags.EnableMotionVectorsJitterCancellation">
+      <summary>
+        <para>Flag indicating if the motion vectors have a jitter pattern applied to them.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FfxFsr2InitializationFlags.EnableTexture1DUsage">
+      <summary>
+        <para>Flag indicating if the backend should use 1D textures.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AMD.FSR2CommandExecutionData">
+      <summary>
+        <para>Represents the state of an FSR2Context. If you call Device.ExecuteFSR2, Unity sends the values in this struct to the runtime. After this, you can change the values in this struct without any side effects.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandExecutionData.cameraFar">
+      <summary>
+        <para>The distance to the far plane of the camera.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandExecutionData.cameraFovAngleVertical">
+      <summary>
+        <para>The camera angle field of view in the vertical direction (expressed in radians).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandExecutionData.cameraNear">
+      <summary>
+        <para>The distance to the near plane of the camera.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandExecutionData.enableSharpening">
+      <summary>
+        <para>Enable an additional sharpening pass.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandExecutionData.frameTimeDelta">
+      <summary>
+        <para>The time elapsed since the last frame (expressed in milliseconds).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandExecutionData.jitterOffsetX">
+      <summary>
+        <para>The subpixel jitter offset applied to the camera (X axis).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandExecutionData.jitterOffsetY">
+      <summary>
+        <para>The subpixel jitter offset applied to the camera (Y axis).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandExecutionData.preExposure">
+      <summary>
+        <para>The pre exposure value (must be &gt; 0.0f).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandExecutionData.renderSizeHeight">
+      <summary>
+        <para>The height resolution that was used for rendering the input resources.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandExecutionData.renderSizeWidth">
+      <summary>
+        <para>The width resolution that was used for rendering the input resources.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandExecutionData.reset">
+      <summary>
+        <para>A boolean value which when set to true, indicates the camera has moved discontinuously.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandExecutionData.sharpness">
+      <summary>
+        <para>The sharpness value between 0 and 1, where 0 is no additional sharpness and 1 is maximum additional sharpness.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandExecutionData.MVScaleX">
+      <summary>
+        <para>The scale factor to apply to motion vectors (X axis).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandExecutionData.MVScaleY">
+      <summary>
+        <para>The scale factor to apply to motion vectors (Y axis).</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AMD.FSR2CommandInitializationData">
+      <summary>
+        <para>Represents the initialization state of a FSR2Context. You can only use and set this when calling GraphicsDevice.CreateFeature.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandInitializationData.displaySizeHeight">
+      <summary>
+        <para>The height of the presentation resolution targeted by the upscaling process.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandInitializationData.displaySizeWidth">
+      <summary>
+        <para>The width of the presentation resolution targeted by the upscaling process.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandInitializationData.ffxFsrFlags">
+      <summary>
+        <para>Initialization flags. Additional resources: FfxFsr2InitializationFlags.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandInitializationData.maxRenderSizeHeight">
+      <summary>
+        <para>The maximum height that rendering will be performed at.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2CommandInitializationData.maxRenderSizeWidth">
+      <summary>
+        <para>The maximum width that rendering will be performed at.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AMD.FSR2CommandInitializationData.GetFlag(UnityEngine.AMD.FfxFsr2InitializationFlags)">
+      <summary>
+        <para>Helper function. Identifies whether an initialization flag is set or unset. See Also: FfxFsr2InitializationFlags.</para>
+      </summary>
+      <param name="flag">The feature flag to get the state from.</param>
+      <returns>
+        <para>Indicates whether the feature state is set or unset.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AMD.FSR2CommandInitializationData.SetFlag(UnityEngine.AMD.FfxFsr2InitializationFlags,System.Boolean)">
+      <summary>
+        <para>Helper function. Controls the initialization feature flags set. See Also: FfxFsr2InitializationFlags.</para>
+      </summary>
+      <param name="flag">The feature flag to set or unset.</param>
+      <param name="value">Indicates whether to set or unset the flag.</param>
+    </member>
+    <member name="T:UnityEngine.AMD.FSR2Context">
+      <summary>
+        <para>Provides the persistent context for managing FSR2 initialization and per-frame execution state.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AMD.FSR2Context.executeData">
+      <summary>
+        <para>The mutable execution parameters used by FSR2 for each frame.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AMD.FSR2Context.initData">
+      <summary>
+        <para>The immutable initialization parameters used to configure FSR2.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AMD.FSR2Quality">
+      <summary>
+        <para>Options for FSR2 performance modes.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2Quality.Balanced">
+      <summary>
+        <para>Balances performance with quality.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2Quality.Performance">
+      <summary>
+        <para>Fast performance, lower quality.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2Quality.Quality">
+      <summary>
+        <para>Highest quality, lower performance.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AMD.FSR2Quality.UltraPerformance">
+      <summary>
+        <para>Fastest performance, lowest quality.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AMD.FSR2TextureTable">
+      <summary>
+        <para>The set of texture slots available for the FSR2Context. SA GraphicsDevice.ExecuteFSR2.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AMD.FSR2TextureTable.biasColorMask">
+      <summary>
+        <para>A mask, same size as colorInput, preferably of format R8_UNORM that informs FSR2 of possible moving pixels. If heavy ghosting is encountered, set pixels to this mask to fix the problem. This texture is optional.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AMD.FSR2TextureTable.colorInput">
+      <summary>
+        <para>The input color buffer to upsample for FSR2Context. This texture is mandatory and you must set it to a non-null value.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AMD.FSR2TextureTable.colorOutput">
+      <summary>
+        <para>The input color buffer to upsample for FSR2Context. This texture is mandatory and you must set it to a non-null value.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AMD.FSR2TextureTable.depth">
+      <summary>
+        <para>The input depth buffer. This must be the same size as the input color buffer. This texture is mandatory and you must set it to a non-null value.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AMD.FSR2TextureTable.exposureTexture">
+      <summary>
+        <para>A 1x1 texture with pre-exposure values. If you do not use pre-exposure, do not set this texture. This texture is optional.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AMD.FSR2TextureTable.motionVectors">
+      <summary>
+        <para>The motion vectors requested by the FSR2Context. Depending on the AMD.FSR2FeatureFlags specified in FSR2Context.initData, this buffer can be a smaller scale or the full output resolution. This texture is mandatory and you must set it to a non-null value.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AMD.FSR2TextureTable.reactiveMask">
+      <summary>
+        <para>Rendering mask specifying reliance on temporal information. Additional resources: &lt;a href="https:github.comGPUOpen-EffectsFidelityFX-FSR2treemaster#reactive-mask"&gt;Github documentation on reactive mask.&lt;/a&gt;</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AMD.FSR2TextureTable.transparencyMask">
+      <summary>
+        <para>A transparency bit mask. This must be the same size as the input texture. This texture helps the FSR2Context with ghosting issues. This texture is optional.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AMD.GraphicsDevice">
+      <summary>
+        <para>Provides the main entry point for the AMD Module. Use this to interact with the FSR2 feature.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AMD.GraphicsDevice.device">
+      <summary>
+        <para>Gets the device created by GraphicsDevice.CreateGraphicsDevice. If the device hasn't been created this property evaluates to null.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AMD.GraphicsDevice.version">
+      <summary>
+        <para>Gets the version that corresponds to the Unity host plugin that manages the AMD.AMDUnityPlugin official library.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AMD.GraphicsDevice.CreateFeature(UnityEngine.Rendering.CommandBuffer,UnityEngine.AMD.FSR2CommandInitializationData&amp;)">
+      <summary>
+        <para>Creates an FSR2Context object.</para>
+      </summary>
+      <param name="cmd">The rendering command buffer to record commands into. This call does not execute the command buffer. You must execute the command buffer yourself at any time after this call.</param>
+      <param name="initSettings">Initial settings structure for the FSR2 feature.</param>
+      <returns>
+        <para>Returns a Fidelity FX Super Resolution 2.0 context object.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AMD.GraphicsDevice.CreateGraphicsDevice">
+      <summary>
+        <para>Creates the main API object. Call this method only once in your application.</para>
+      </summary>
+      <returns>
+        <para>The Device API object to access AMD features. If you call this function again, the function returns the same device.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AMD.GraphicsDevice.DestroyFeature(UnityEngine.Rendering.CommandBuffer,UnityEngine.AMD.FSR2Context)">
+      <summary>
+        <para>Destroys a specific FSR2Context created with GraphicsDevice.CreateFeature.</para>
+      </summary>
+      <param name="cmd">The rendering command buffer to record commands into. This call does not execute the command buffer. You must execute the command buffer yourself at any time after this call.</param>
+      <param name="fsrContext">The command object to destroy.</param>
+    </member>
+    <member name="M:UnityEngine.AMD.GraphicsDevice.ExecuteFSR2(UnityEngine.Rendering.CommandBuffer,UnityEngine.AMD.FSR2Context,UnityEngine.AMD.FSR2TextureTable&amp;)">
+      <summary>
+        <para>Records the execution of the FSR2 pass into a rendering command buffer. This call does not execute the command buffer, it only appends custom commands into it.</para>
+      </summary>
+      <param name="cmd">The rendering command buffer to record commands into. This call does not execute the command buffer. You must execute the command buffer yourself at any time after this call.</param>
+      <param name="fsr2Context">The source feature context to execute. You must set the parameters for this command in the FSR2Context object prior to this call.</param>
+      <param name="textures">The collection of textures represented by FSR2TextureTable, where inputs/outputs are specified for the FSR 2.0 pass to execute.</param>
+    </member>
+    <member name="M:UnityEngine.AMD.GraphicsDevice.GetRenderResolutionFromQualityMode(UnityEngine.AMD.FSR2Quality,System.UInt32,System.UInt32,System.UInt32&amp;,System.UInt32&amp;)">
+      <summary>
+        <para>Queries the resolution configuration from a specified quality mode preset.</para>
+      </summary>
+      <param name="qualityMode">The input quality mode. See FSR2Quality for the list of quality modes.</param>
+      <param name="displayWidth">The input display resolution width.</param>
+      <param name="displayHeight">The input display resolution height.</param>
+      <param name="renderWidth">The output resolution width calculated.</param>
+      <param name="renderHeight">The output resolution height calculated.</param>
+      <returns>
+        <para>Returns true on success. False otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.AMD.GraphicsDevice.GetUpscaleRatioFromQualityMode(UnityEngine.AMD.FSR2Quality)">
+      <summary>
+        <para>Gets a precomputed upscaling ratio based on a preset quality setting.</para>
+      </summary>
+      <param name="qualityMode">The input quality mode. See FSR2Quality for the list of quality modes.</param>
+      <returns>
+        <para>The upscaling per-dimension ratio.</para>
+      </returns>
+    </member>
+    <member name="A:UnityEngine.AMDModule">
+      <summary>
+        <para>A module that contains API you can use to interact with AMD graphics cards.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

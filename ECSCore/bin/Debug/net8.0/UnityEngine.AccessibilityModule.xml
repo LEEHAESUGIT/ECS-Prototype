@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.AccessibilityModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Accessibility.AccessibilityHierarchy">
+      <summary>
+        <para>
+ Represents the hierarchy data model that the screen reader uses for reading and navigating the UI.
+ </para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilityHierarchy.rootNodes">
+      <summary>
+        <para>
+ The root nodes of the hierarchy.
+ </para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Accessibility.AccessibilityHierarchy.AddNode(System.String,UnityEngine.Accessibility.AccessibilityNode)">
+      <summary>
+        <para>
+ Creates and adds a new node with the given label in this hierarchy under the given parent node. If no parent is
+ provided, the new node is added as a root in the hierarchy.
+ </para>
+      </summary>
+      <param name="label">A label that succinctly describes the accessibility node.</param>
+      <param name="parent">The parent of the node being added. When the value given is null, the created node
+ is placed at the root level.</param>
+      <returns>
+        <para>The node created and added.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Accessibility.AccessibilityHierarchy.Clear">
+      <summary>
+        <para>
+ Resets the hierarchy to an empty state, removing all the nodes and removing focus.
+ </para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Accessibility.AccessibilityHierarchy.ContainsNode(UnityEngine.Accessibility.AccessibilityNode)">
+      <summary>
+        <para>
+ Returns whether a given node exists in the hierarchy.
+ </para>
+      </summary>
+      <param name="node">The node to search for in the hierarchy.</param>
+      <returns>
+        <para>Whether the node exists in this hierarchy.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Accessibility.AccessibilityHierarchy.#ctor">
+      <summary>
+        <para>
+ Initializes and returns an instance of an AccessibilityHierarchy.
+ </para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Accessibility.AccessibilityHierarchy.GetLowestCommonAncestor(UnityEngine.Accessibility.AccessibilityNode,UnityEngine.Accessibility.AccessibilityNode)">
+      <summary>
+        <para>
+ Retrieves the lowest common ancestor of two nodes in the hierarchy.
+ The lowest common ancestor is the node that is the common node that both nodes share in their path to the root node
+ of their branch in the hierarchy.
+ </para>
+      </summary>
+      <param name="firstNode">The first node to find the lowest common ancestor of.</param>
+      <param name="secondNode">The second node to find the lowest common ancestor of.</param>
+      <returns>
+        <para>The lowest common ancestor of the two given nodes, or null if there is no common ancestor.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Accessibility.AccessibilityHierarchy.InsertNode(System.Int32,System.String,UnityEngine.Accessibility.AccessibilityNode)">
+      <summary>
+        <para>
+ Creates and inserts a new node with the given label at the given index in this hierarchy under the given parent node.
+ If no parent is provided, the new node is inserted at the given index as a root in the hierarchy.
+ </para>
+      </summary>
+      <param name="childIndex">A zero-based index for positioning the inserted node in the parent's children list,
+ or in the list of roots if the node is a root node. If the index is invalid, the inserted node will be the
+ last child of its parent (or the last root node).</param>
+      <param name="label">A label that succinctly describes the accessibility node.</param>
+      <param name="parent">The parent of the node being added. When the value given is null, the created node
+ is placed at the root level.</param>
+      <returns>
+        <para>The node created and inserted.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Accessibility.AccessibilityHierarchy.MoveNode(UnityEngine.Accessibility.AccessibilityNode,UnityEngine.Accessibility.AccessibilityNode,System.Int32)">
+      <summary>
+        <para>
+ Moves the node elsewhere in the hierarchy, which causes the given node to be parented by a different node
+ in the hierarchy. An optional index can be supplied for specifying the position within the list of children the
+ moved node should take (zero-based). If no index is supplied, the node is added as the last child of the new parent by default.
+
+Root nodes can be moved elsewhere in the hierarchy, therefore ceasing to be a root.
+ Non-root nodes can be moved to become a root node by providing null as the new parent node.
+
+Warning: The moving operation is costly as many checks have to be executed to guarantee the integrity of
+ the hierarchy. Therefore this operation should not be done excessively as it may affect performance.
+</para>
+      </summary>
+      <param name="node">The node to move.</param>
+      <param name="newParent">The new parent of the moved node, or null if the moved node should be made into a root node.</param>
+      <param name="newChildIndex">An optional zero-based index for positioning the moved node in the new parent's children list, or in the list of
+ roots if the node is becoming a root node. If the index is not provided or is invalid, the moved node will be the last child of its parent.</param>
+      <returns>
+        <para>Whether the node was successfully moved.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Accessibility.AccessibilityHierarchy.RefreshNodeFrames">
+      <summary>
+        <para>
+ Refreshes all the node frames (i.e. the screen elements' positions) for the hierarchy.
+ </para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Accessibility.AccessibilityHierarchy.RemoveNode(UnityEngine.Accessibility.AccessibilityNode,System.Boolean)">
+      <summary>
+        <para>
+ Removes the node from the hierarchy. Can also optionally remove nodes under the given node depending on the value of
+ the removeChildren parameter.
+ </para>
+      </summary>
+      <param name="node">The node to remove.</param>
+      <param name="removeChildren">Default value is true. If removeChildren is false, Unity grafts the child nodes to the parent.</param>
+    </member>
+    <member name="M:UnityEngine.Accessibility.AccessibilityHierarchy.TryGetNode(System.Int32,UnityEngine.Accessibility.AccessibilityNode&amp;)">
+      <summary>
+        <para>
+ Tries to get the node in this hierarchy that has the given ID.
+ </para>
+      </summary>
+      <param name="id">The ID of the node to retrieve.</param>
+      <param name="node">The valid node with the associated ID, or null if no such node exists in this hierarchy.</param>
+      <returns>
+        <para>Returns true if a node is found and false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Accessibility.AccessibilityHierarchy.TryGetNodeAt(System.Single,System.Single,UnityEngine.Accessibility.AccessibilityNode&amp;)">
+      <summary>
+        <para>
+ Tries to retrieve the node at the given position on the screen.
+ </para>
+      </summary>
+      <param name="horizontalPosition">The horizontal position on the screen.</param>
+      <param name="verticalPosition">The vertical position on the screen.</param>
+      <param name="node">The node found at that screen position, or null if there are no nodes at that position.</param>
+      <returns>
+        <para>Returns true if a node is found and false otherwise.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Accessibility.AccessibilityNode">
+      <summary>
+        <para>
+ An instance of a node in the AccessibilityHierarchy, representing an element in the UI that the screen reader
+ can read, focus, and execute actions on.
+ </para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilityNode.allowsDirectInteraction">
+      <summary>
+        <para>
+ Whether this node allows direct touch interaction for users.
+ </para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilityNode.children">
+      <summary>
+        <para>
+ The children nodes of the node.
+ </para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Accessibility.AccessibilityNode.decremented(System.Action)">
+      <summary>
+        <para>
+ Called when the user of the screen reader decrements the content of the node.
+ </para>
+      </summary>
+      <param name="value"></param>
+    </member>
+    <member name="?:UnityEngine.Accessibility.AccessibilityNode.dismissed(System.Func`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>
+ Called when the user of the screen reader dismisses this node.
+ </para>
+      </summary>
+      <param name="value"></param>
+    </member>
+    <member name="?:UnityEngine.Accessibility.AccessibilityNode.focusChanged(System.Action`2&lt;UnityEngine.Accessibility.AccessibilityNode,System.Boolean&gt;)">
+      <summary>
+        <para>
+ Called when the node gains or loses screen reader focus.
+ </para>
+      </summary>
+      <param name="value"></param>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilityNode.frame">
+      <summary>
+        <para>
+ The Rect represents the position in screen coordinates of the node in the UI. This can be set
+ directly but it is recommended that frameGetter is set instead, so that the value can be
+ recalculated when necessary.
+ </para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilityNode.frameGetter">
+      <summary>
+        <para>
+ Optional delegate that can be set to calculate the frame for the node instead of setting a flat value.
+ If the frame of the node may change over time, this delegate should be set instead of giving a one time value for
+ the frame.
+ </para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilityNode.hint">
+      <summary>
+        <para>
+ Provides additional information about the accessibility node.
+ For example, the result of performing an action on the node.
+ </para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilityNode.id">
+      <summary>
+        <para>
+ The ID of this node.
+ </para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Accessibility.AccessibilityNode.incremented(System.Action)">
+      <summary>
+        <para>
+ Called when the user of the screen reader increments the content of the node.
+ </para>
+      </summary>
+      <param name="value"></param>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilityNode.isActive">
+      <summary>
+        <para>
+ Whether this node is active in the hierarchy. The default value is true.
+ </para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilityNode.isFocused">
+      <summary>
+        <para>
+ Whether the node is focused by the screen reader.
+ </para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilityNode.label">
+      <summary>
+        <para>
+ A string value that succinctly describes this node.
+ The label is the first thing read by the screen reader when a node is focused.
+ </para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilityNode.parent">
+      <summary>
+        <para>
+ The parent of the node. If the node is at the root level, the parent value is null.
+ </para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilityNode.role">
+      <summary>
+        <para>
+ The role for the node.
+ </para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Accessibility.AccessibilityNode.selected(System.Func`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>
+ Called when the user of the screen reader selects this node.
+ </para>
+      </summary>
+      <param name="value"></param>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilityNode.state">
+      <summary>
+        <para>
+ The state for the node.
+ </para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilityNode.value">
+      <summary>
+        <para>
+ The value of this node.
+ </para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Accessibility.AccessibilityNode.GetHashCode">
+      <summary>
+        <para>
+ A hash used for comparisons.
+ </para>
+      </summary>
+      <returns>
+        <para>A unique hash code.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Accessibility.AccessibilityNode.ToString">
+      <summary>
+        <para>
+ Provides a debugging string.
+ </para>
+      </summary>
+      <returns>
+        <para>A string containing the accessibility node ID and generational version.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Accessibility.AccessibilityRole">
+      <summary>
+        <para>Describes the role of an accessibility node.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Accessibility.AccessibilityRole.Button">
+      <summary>
+        <para>The accessibility node behaves like a button.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Accessibility.AccessibilityRole.Header">
+      <summary>
+        <para>The accessibility node behaves like a header that divides content into sections (for example, the title of a navigation bar).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Accessibility.AccessibilityRole.Image">
+      <summary>
+        <para>The accessibility node behaves like an image.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Accessibility.AccessibilityRole.KeyboardKey">
+      <summary>
+        <para>The accessibility node behaves like a keyboard key.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Accessibility.AccessibilityRole.None">
+      <summary>
+        <para>The accessibility node has no roles.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Accessibility.AccessibilityRole.SearchField">
+      <summary>
+        <para>The accessibility node behaves like a search field.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Accessibility.AccessibilityRole.Slider">
+      <summary>
+        <para>The accessibility node behaves like a slider. The value of this node can be continuously adjusted through a range.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Accessibility.AccessibilityRole.StaticText">
+      <summary>
+        <para>The accessibility node behaves like static text that can't change.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Accessibility.AccessibilityRole.TabBar">
+      <summary>
+        <para>The accessibility node behaves like an ordered list of tabs.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Accessibility.AccessibilityRole.Toggle">
+      <summary>
+        <para>The accessibility node behaves like a toggle.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Accessibility.AccessibilitySettings">
+      <summary>
+        <para>
+ Provides access to the accessibility settings for the current platform.
+ </para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Accessibility.AccessibilitySettings.boldTextStatusChanged(System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>
+ Event that is invoked on the main thread when the user changes the
+ bold text setting in the system settings.
+ </para>
+      </summary>
+      <param name="value"></param>
+    </member>
+    <member name="?:UnityEngine.Accessibility.AccessibilitySettings.closedCaptioningStatusChanged(System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>
+ Event that is invoked on the main thread when the user changes the
+ closed captioning setting in the system settings.
+ </para>
+      </summary>
+      <param name="value"></param>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilitySettings.fontScale">
+      <summary>
+        <para>
+ Gets the font scale set by the user in the system settings.
+ </para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Accessibility.AccessibilitySettings.fontScaleChanged(System.Action`1&lt;System.Single&gt;)">
+      <summary>
+        <para>
+ Event that is invoked on the main thread when the user changes the
+ font scale in the system settings.
+ </para>
+      </summary>
+      <param name="value"></param>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilitySettings.isBoldTextEnabled">
+      <summary>
+        <para>
+ Checks whether or not bold text is enabled in the system settings.
+ </para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AccessibilitySettings.isClosedCaptioningEnabled">
+      <summary>
+        <para>
+ Checks whether or not closed captioning is enabled in the system
+ settings.
+ </para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Accessibility.AccessibilityState">
+      <summary>
+        <para>Describes the state of an accessibility node.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Accessibility.AccessibilityState.Disabled">
+      <summary>
+        <para>The accessibility node is currently in a disabled state and does not respond to user interaction.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Accessibility.AccessibilityState.None">
+      <summary>
+        <para>The accessibility node is in none of the other states.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Accessibility.AccessibilityState.Selected">
+      <summary>
+        <para>The accessibility node is currently in a selected state (for example, a selected row in a table or a selected button within a segmented control).</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Accessibility.AssistiveSupport">
+      <summary>
+        <para>
+ Access point to assistive technology support APIs.
+ </para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AssistiveSupport.activeHierarchy">
+      <summary>
+        <para>
+ The active AccessibilityHierarchy for the screen reader. May be null if no hierarchy is active.
+
+You need an active accessibility hierarchy to present any content to the user through the screen reader.
+
+If the screen reader is off, there is no active hierarchy. If the screen reader is turned off on the device
+ while an active hierarchy is set, the active hierarchy is automatically set to null.
+
+For all the supported platforms, refer to AssistiveSupport.
+</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AssistiveSupport.isScreenReaderEnabled">
+      <summary>
+        <para>
+ Whether the screen reader is enabled on the operating system.
+
+For all the supported platforms, refer to AssistiveSupport.
+</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Accessibility.AssistiveSupport.nodeFocusChanged(System.Action`1&lt;UnityEngine.Accessibility.AccessibilityNode&gt;)">
+      <summary>
+        <para>
+ Event that is invoked on the main thread when the screen reader focus changes.
+
+For all the supported platforms, refer to AssistiveSupport.
+</para>
+      </summary>
+      <param name="value"></param>
+    </member>
+    <member name="P:UnityEngine.Accessibility.AssistiveSupport.notificationDispatcher">
+      <summary>
+        <para>
+ Service used to send accessibility notifications to the screen reader.
+
+For all the supported platforms, refer to AssistiveSupport.
+</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Accessibility.AssistiveSupport.screenReaderStatusChanged(System.Action`1&lt;System.Boolean&gt;)">
+      <summary>
+        <para>
+ Event that is invoked on the main thread when the screen reader is enabled or disabled.
+
+For all the supported platforms, refer to AssistiveSupport.
+</para>
+      </summary>
+      <param name="value"></param>
+    </member>
+    <member name="?:UnityEngine.Accessibility.IAccessibilityNotificationDispatcher">
+      <summary>
+        <para>
+ Sends accessibility notifications to the screen reader.
+ </para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Accessibility.IAccessibilityNotificationDispatcher.SendAnnouncement(System.String)">
+      <summary>
+        <para>
+ Sends a notification to the screen reader conveying an announcement. Use this notification to provide
+ accessibility information about events that don't update the app's UI, or that update the UI only briefly.
+ </para>
+      </summary>
+      <param name="announcement">The string representing the announcement.</param>
+    </member>
+    <member name="M:UnityEngine.Accessibility.IAccessibilityNotificationDispatcher.SendLayoutChanged(UnityEngine.Accessibility.AccessibilityNode)">
+      <summary>
+        <para>
+ Sends a notification to the screen reader when the layout of a screen changes (for example, when an
+ individual element appears or disappears). An optional parameter can be used to request the screen reader
+ focus on a specific node after processing the notification.
+ </para>
+      </summary>
+      <param name="nodeToFocus">Optional node to be focused by the screen reader.</param>
+    </member>
+    <member name="M:UnityEngine.Accessibility.IAccessibilityNotificationDispatcher.SendScreenChanged(UnityEngine.Accessibility.AccessibilityNode)">
+      <summary>
+        <para>
+ Sends a notification to the screen reader when the screen has changed considerably. An optional parameter
+ can be used to request the screen reader focus on a specific node after processing the notification.
+ </para>
+      </summary>
+      <param name="nodeToFocus">Optional node to be focused by the screen reader.</param>
+    </member>
+    <member name="T:UnityEngine.Accessibility.VisionUtility">
+      <summary>
+        <para>A class containing methods to assist with accessibility for users with different vision capabilities.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Accessibility.VisionUtility.GetColorBlindSafePalette(UnityEngine.Color[],System.Single,System.Single)">
+      <summary>
+        <para>Gets a palette of colors that should be distinguishable for normal vision, deuteranopia, protanopia, and tritanopia.</para>
+      </summary>
+      <param name="palette">An array of colors to populate with a palette.</param>
+      <param name="minimumLuminance">Minimum allowable perceived luminance from 0 to 1. A value of 0.2 or greater is recommended for dark backgrounds.</param>
+      <param name="maximumLuminance">Maximum allowable perceived luminance from 0 to 1. A value of 0.8 or less is recommended for light backgrounds.</param>
+      <returns>
+        <para>The number of unambiguous colors in the palette.</para>
+      </returns>
+    </member>
+    <member name="A:UnityEngine.AccessibilityModule">
+      <summary>
+        <para>The Accessibility module includes utilities to facilitate the development of accessible user experiences in Unity.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

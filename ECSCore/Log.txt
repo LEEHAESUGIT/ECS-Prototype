@@ -1,0 +1,21 @@
+TODO
++ IsNeedInit() 메소드 내부로직 수정
++ ECSManager 테스트 코드 완성
++ ECSCore 리펙토링
++ ECSManager 의 public 를 제외한 모든 접근제한자 internal로 변경
+
+-------------------------------------------------------------------------------------------------------------
+2026-02-12
++ Today
+	ECSManager 테스트 코드 작성 (ECSManagerTest.cs)
++ Trobule
+	테스트 코드 작성중 NeedInit컴포넌트 의 존재 유무 비교하는 IsNeedInit() 문제가 생김. (ECSManager.cs) - 해결
+		Archetype에 포함된 타입들을 ComponentTypeID를 키, int 를 값으로 갖는 TypeIndexMap이라는
+		딕셔너리로 관리하고 있었다. 기존에는 TryGetValue메소드를 사용해 비교를 했다.
+		값을 비교하기 위해 집어넣어주는 ComponenetTypeID를 new로 NeedInit의 아이디를 주며 할당했는데
+		사실 이둘은 전혀 다른 메모리에 저장된 다른객체가 된다. 그래서 항상 false를 반환하게 된다.
+		임시로 반복문을 사용해 ComponentTypeID 내부의 ID값과 미리매핑해놓은 NeedInit타입의 ID를 비교하여 
+		임시로 해결했다. 반복문으로 딕셔너리전체를 비교해야 한다는게 맘에 들지 않는다. 
+		추후, 수정 하려한다.
+
+

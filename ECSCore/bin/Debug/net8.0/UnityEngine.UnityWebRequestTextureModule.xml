@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.UnityWebRequestTextureModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Networking.DownloadedTextureFlags">
+      <summary>
+        <para>Flags to be set in DownloadedTextureParams to indicate properties of the texture that will be created.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.DownloadedTextureFlags.LinearColorSpace">
+      <summary>
+        <para>Indicates that a texture using linear color space must be created.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.DownloadedTextureFlags.MipmapChain">
+      <summary>
+        <para>Indicates that created texture must have mipmaps (multiple versions of different quality of the same texture). More efficient, but uses more memory.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.DownloadedTextureFlags.None">
+      <summary>
+        <para>Special value indicating that none of the other options are being used.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.DownloadedTextureFlags.Readable">
+      <summary>
+        <para>Indicates that created texture must be readable. Allows reading values of texture pixels, but increases memory usage.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.DownloadedTextureParams">
+      <summary>
+        <para>Parameters for the texture to be created.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.DownloadedTextureParams.flags">
+      <summary>
+        <para>A set of properties the created texture should have.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadedTextureParams.linearColorSpace">
+      <summary>
+        <para>Check or change the flag for linear color space in flags variable.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadedTextureParams.mipmapChain">
+      <summary>
+        <para>Check or change the flag for mipmaps in flags variable.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Networking.DownloadedTextureParams.mipmapCount">
+      <summary>
+        <para>Number of mipmaps to generate for the created texture.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadedTextureParams.readable">
+      <summary>
+        <para>Check or change the flag for readability in flags variable.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadedTextureParams.Default">
+      <summary>
+        <para>Returns parameters set to recommended values. It is recommended to use this for the initial values and modify only specific parameters that you need.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Networking.DownloadHandlerTexture">
+      <summary>
+        <para>A DownloadHandler subclass specialized for downloading images for use as Texture objects.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandlerTexture.texture">
+      <summary>
+        <para>Returns the downloaded Texture, or null. (Read Only)</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerTexture.#ctor">
+      <summary>
+        <para>Default constructor.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerTexture.#ctor(System.Boolean)">
+      <summary>
+        <para>Constructor, allows TextureImporter.isReadable property to be set.</para>
+      </summary>
+      <param name="readable">Value to set for TextureImporter.isReadable.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerTexture.#ctor(UnityEngine.Networking.DownloadedTextureParams)">
+      <summary>
+        <para>Constructor that allows you to specify the full set of supported properties when creating a texture from a downloaded image.</para>
+      </summary>
+      <param name="parameters">Parameters specifying various properties of texture that will be created.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.DownloadHandlerTexture.GetContent(UnityEngine.Networking.UnityWebRequest)">
+      <summary>
+        <para>Returns the downloaded Texture, or null.</para>
+      </summary>
+      <param name="www">A finished UnityWebRequest object with DownloadHandlerTexture attached.</param>
+      <returns>
+        <para>The same as DownloadHandlerTexture.texture</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Networking.UnityWebRequestTexture">
+      <summary>
+        <para>Helpers for downloading image files into Textures using UnityWebRequest.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestTexture.GetTexture(System.String)">
+      <summary>
+        <para>Create a UnityWebRequest intended to download an image via HTTP GET and create a Texture based on the retrieved data.</para>
+      </summary>
+      <param name="uri">The URI of the image to download.</param>
+      <param name="nonReadable">If true, the texture's raw data will not be accessible to script. This can conserve memory. Default: false.</param>
+      <returns>
+        <para>A UnityWebRequest properly configured to download an image and convert it to a Texture.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestTexture.GetTexture(System.Uri)">
+      <summary>
+        <para>Create a UnityWebRequest intended to download an image via HTTP GET and create a Texture based on the retrieved data.</para>
+      </summary>
+      <param name="uri">The URI of the image to download.</param>
+      <param name="nonReadable">If true, the texture's raw data will not be accessible to script. This can conserve memory. Default: false.</param>
+      <returns>
+        <para>A UnityWebRequest properly configured to download an image and convert it to a Texture.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestTexture.GetTexture(System.String,System.Boolean)">
+      <summary>
+        <para>Create a UnityWebRequest intended to download an image via HTTP GET and create a Texture based on the retrieved data.</para>
+      </summary>
+      <param name="uri">The URI of the image to download.</param>
+      <param name="nonReadable">If true, the texture's raw data will not be accessible to script. This can conserve memory. Default: false.</param>
+      <returns>
+        <para>A UnityWebRequest properly configured to download an image and convert it to a Texture.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestTexture.GetTexture(System.Uri,System.Boolean)">
+      <summary>
+        <para>Create a UnityWebRequest intended to download an image via HTTP GET and create a Texture based on the retrieved data.</para>
+      </summary>
+      <param name="uri">The URI of the image to download.</param>
+      <param name="nonReadable">If true, the texture's raw data will not be accessible to script. This can conserve memory. Default: false.</param>
+      <returns>
+        <para>A UnityWebRequest properly configured to download an image and convert it to a Texture.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestTexture.GetTexture(System.String,UnityEngine.Networking.DownloadedTextureParams)">
+      <summary>
+        <para>Create a UnityWebRequest intended to download an image via HTTP GET and create a Texture based on the retrieved data.</para>
+      </summary>
+      <param name="uri">The URI of the image to download.</param>
+      <param name="parameters">Parameters specifying various properties of texture that will be created.</param>
+      <returns>
+        <para>A UnityWebRequest properly configured to download an image and convert it to a Texture.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequestTexture.GetTexture(System.Uri,UnityEngine.Networking.DownloadedTextureParams)">
+      <summary>
+        <para>Create a UnityWebRequest intended to download an image via HTTP GET and create a Texture based on the retrieved data.</para>
+      </summary>
+      <param name="uri">The URI of the image to download.</param>
+      <param name="parameters">Parameters specifying various properties of texture that will be created.</param>
+      <returns>
+        <para>A UnityWebRequest properly configured to download an image and convert it to a Texture.</para>
+      </returns>
+    </member>
+    <member name="A:UnityEngine.UnityWebRequestTextureModule">
+      <summary>
+        <para>The UnityWebRequestTexture module provides the DownloadHandlerTexture class to use UnityWebRequest to download Textures.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

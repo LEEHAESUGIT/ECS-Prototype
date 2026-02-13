@@ -1,0 +1,2772 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.HierarchyCoreModule</name>
+    </assembly>
+    <member name="T:Unity.Hierarchy.Hierarchy">
+      <summary>
+        <para>
+ Represents a tree-like container of nodes.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.Add(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Adds a new node that has a specified parent node to the hierarchy.
+ </para>
+      </summary>
+      <param name="parent">The parent of the hierarchy node to add.</param>
+      <returns>
+        <para>A hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.Add(Unity.Hierarchy.HierarchyNode&amp;,System.Int32)">
+      <summary>
+        <para>
+ Adds multiple new nodes that have a specified parent node to the hierarchy.
+ </para>
+      </summary>
+      <param name="parent">The parent of the hierarchy nodes.</param>
+      <param name="count">The number of nodes to create.</param>
+      <returns>
+        <para>An array of hierarchy nodes.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.Add(Unity.Hierarchy.HierarchyNode&amp;,System.Span`1&lt;Unity.Hierarchy.HierarchyNode&gt;)">
+      <summary>
+        <para>
+ Adds multiple new nodes that have a specified parent node to the hierarchy.
+ </para>
+      </summary>
+      <param name="parent">The parent of the hierarchy nodes.</param>
+      <param name="outNodes">The span of nodes to fill with new nodes.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.Clear">
+      <summary>
+        <para>
+ Removes all nodes from the hierarchy.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.Hierarchy.Count">
+      <summary>
+        <para>
+ The total number of nodes.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.#ctor">
+      <summary>
+        <para>
+ Constructs a new Hierarchy.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.Dispose">
+      <summary>
+        <para>
+ Dispose this object to release its memory.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.DoesChildrenNeedsSorting(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets whether the child nodes of a hierarchy node need to be sorted.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>true if the child nodes of a hierarchy node need to be sorted, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.EnumerateChildren(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the child nodes of a hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>An enumerable of hierarchy node children.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.EnumerateNodeTypeHandlersBase">
+      <summary>
+        <para>
+ Enumerates all the node type handlers base that this hierarchy uses.
+ </para>
+      </summary>
+      <returns>
+        <para>An enumerable of hierarchy node type handler base.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.Exists(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Determines whether a node exists or not.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>true if the node exists, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetAllNodeTypeHandlersBase(System.Collections.Generic.List`1&lt;Unity.Hierarchy.HierarchyNodeTypeHandlerBase&gt;)">
+      <summary>
+        <para>
+ Gets all the node type handlers that this hierarchy uses.
+ </para>
+      </summary>
+      <param name="handlers">The list of node type handlers to populate.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetAllNodeTypeHandlersBaseCount">
+      <summary>
+        <para>
+ Gets the number of node type handlers that this hierarchy uses.
+ </para>
+      </summary>
+      <returns>
+        <para>Number of node type handlers.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetChild(Unity.Hierarchy.HierarchyNode&amp;,System.Int32)">
+      <summary>
+        <para>
+ Gets the child node at the specified index of a hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="index">The child index.</param>
+      <returns>
+        <para>A hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetChildIndex(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the index of a child node in the parent's children list.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetChildren(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the child nodes of a hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>An array of hierarchy nodes.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetChildren(Unity.Hierarchy.HierarchyNode&amp;,System.Span`1&lt;Unity.Hierarchy.HierarchyNode&gt;)">
+      <summary>
+        <para>
+ Gets the child nodes of a hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="outChildren">The span of nodes to fill with child nodes.</param>
+      <returns>
+        <para>The number of hierarchy node written in the  span.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetChildrenCount(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the number of child nodes that a hierarchy node has.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The number of child nodes.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetChildrenCountRecursive(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the number of child nodes that a hierarchy node has, including children of children.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The number of child nodes, including children of children.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetDepth(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Determines the depth of a node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The depth of the hierarchy node. A value of -1 indicates the root node. A value of 0 indicates direct child nodes of the root node. A value of 1 indicates child nodes of the root node's direct children, and then their children have a value of 2 and so on. </para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetName(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the name of a hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The name of the node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetNextSibling(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the next sibling of a node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The next sibling of the hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetNodeType">
+      <summary>
+        <para>
+ Gets the type of the specified hierarchy node.  
+ </para>
+      </summary>
+      <returns>
+        <para>The hierarchy node type.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetNodeType(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Retrieve the hierarchy node type for the specified node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The hierarchy node type.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetNodeTypeHandlerBase">
+      <summary>
+        <para>
+ Gets a hierarchy node type handler instance from this hierarchy.
+ </para>
+      </summary>
+      <returns>
+        <para>The hierarchy node type handler instance for that type if already created, null otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetNodeTypeHandlerBase(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the node type handler instance for the specified node from this hierarchy.
+ </para>
+      </summary>
+      <param name="node"></param>
+      <returns>
+        <para>If the node has a type, the hierarchy node type handler base instance, null otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetNodeTypeHandlerBase(System.String)">
+      <summary>
+        <para>
+ Gets the node type handler instance for the specified node type name from this hierarchy.
+ </para>
+      </summary>
+      <param name="nodeTypeName">The node type name.</param>
+      <returns>
+        <para>If the node type name matches a registered node type handler, the hierarchy node type handler base instance, null otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetOrCreateNodeTypeHandler">
+      <summary>
+        <para>
+ Get or create a hierarchy node type handler instance for this hierarchy.
+ </para>
+      </summary>
+      <returns>
+        <para>The hierarchy node type handler instance for that type.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetOrCreatePropertyString(System.String)">
+      <summary>
+        <para>
+ Creates a string property with a specified name.
+ </para>
+      </summary>
+      <param name="name">The property name.</param>
+      <returns>
+        <para>The property accessor.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetOrCreatePropertyUnmanaged(System.String,Unity.Hierarchy.HierarchyPropertyStorageType)">
+      <summary>
+        <para>
+ Creates an unmanaged property with a specified name.
+ </para>
+      </summary>
+      <param name="name">The property name.</param>
+      <param name="type">The storage type for the property.</param>
+      <returns>
+        <para>The property accessor.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetParent(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the parent of a hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>A hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetPath(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the path of a hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The path of the node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.GetSortIndex(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the sort index of a hierarchy node. Default is 0.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The sort index.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.Hierarchy.IsCreated">
+      <summary>
+        <para>
+ Whether or not this object is valid and uses memory.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.RegisterNodeTypeHandler">
+      <summary>
+        <para>
+ Registers a hierarchy node type handler for this hierarchy.
+ </para>
+      </summary>
+      <returns>
+        <para>The hierarchy node type handler instance for that type.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.Remove(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Removes a node from the hierarchy.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node to remove from the hierarchy.</param>
+      <returns>
+        <para>true if the node was removed, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.RemoveChildren(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Recursively removes all children of a node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.Reserve(System.Int32)">
+      <summary>
+        <para>
+ Ensures that the hierarchy has enough memory reserved for storing the specified number of nodes.
+ </para>
+      </summary>
+      <param name="count">The number of nodes to reserve memory for.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.ReserveChildren(Unity.Hierarchy.HierarchyNode&amp;,System.Int32)">
+      <summary>
+        <para>
+ Ensures that the hierarchy node has enough memory reserved for storing the specified number of children nodes.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="count">The number of children nodes to reserve memory for.</param>
+    </member>
+    <member name="P:Unity.Hierarchy.Hierarchy.Root">
+      <summary>
+        <para>
+ The root node.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.SetName(Unity.Hierarchy.HierarchyNode&amp;,System.String)">
+      <summary>
+        <para>
+ Sets the name of a hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="name">The name of the node.</param>
+      <returns>
+        <para>true if the name was set, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.SetParent(Unity.Hierarchy.HierarchyNode&amp;,Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Sets the parent of a hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="parent">The hierarchy node to set as a parent.</param>
+      <returns>
+        <para>true if the parent was set, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.SetSortIndex(Unity.Hierarchy.HierarchyNode&amp;,System.Int32)">
+      <summary>
+        <para>
+ Sets the sort index of a hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="sortIndex">The sort index.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.SortChildren(Unity.Hierarchy.HierarchyNode&amp;,System.Boolean)">
+      <summary>
+        <para>
+ Sorts the child nodes of a hierarchy node according to their sort index.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="recurse">Whether to sort the child nodes recursively.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.UnregisterNodeTypeHandler">
+      <summary>
+        <para>
+ Removes a hierarchy node type handler from this hierarchy.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.Update">
+      <summary>
+        <para>
+ Updates the hierarchy and requests that every registered hierarchy node type handler integrates their changes into the hierarchy.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.UpdateIncremental">
+      <summary>
+        <para>
+ Updates the hierarchy incrementally.
+ </para>
+      </summary>
+      <returns>
+        <para>true if additional invocations are needed to complete the update, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.Hierarchy.UpdateIncrementalTimed(System.Double)">
+      <summary>
+        <para>
+ Incrementally updates the hierarchy until a time limit is reached.
+ </para>
+      </summary>
+      <param name="milliseconds">The time period in milliseconds.</param>
+      <returns>
+        <para>true if additional invocations are needed to complete the update, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.Hierarchy.UpdateNeeded">
+      <summary>
+        <para>
+ Whether the hierarchy requires an update.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.Hierarchy.Updating">
+      <summary>
+        <para>
+ Whether the hierarchy is currently updating.
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyCommandList">
+      <summary>
+        <para>
+ Represents a list of commands that modify a hierarchy.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.Add(Unity.Hierarchy.HierarchyNode&amp;,Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Adds a new node that has a specified parent node to the hierarchy.
+ </para>
+      </summary>
+      <param name="parent">The parent of the new node.</param>
+      <param name="node">The new node if the command succeeds.</param>
+      <returns>
+        <para>true if the command was appended to the list, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.Add(Unity.Hierarchy.HierarchyNode&amp;,System.Int32,Unity.Hierarchy.HierarchyNode[]&amp;)">
+      <summary>
+        <para>
+ Adds multiple new nodes that have a specified parent node to the hierarchy.
+ </para>
+      </summary>
+      <param name="parent">The parent of the new nodes.</param>
+      <param name="count">The number of nodes to create.</param>
+      <param name="nodes">The new nodes if the command succeeds.</param>
+      <returns>
+        <para>true if the command was appended to the list, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.Add(Unity.Hierarchy.HierarchyNode&amp;,System.Span`1&lt;Unity.Hierarchy.HierarchyNode&gt;)">
+      <summary>
+        <para>
+ Adds multiple new nodes that have a specified parent node to the hierarchy.
+ </para>
+      </summary>
+      <param name="parent">The parent of the new nodes.</param>
+      <param name="outNodes">The span of nodes filled with new nodes if the command succeeds.</param>
+      <returns>
+        <para>true if the command was appended to the list, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyCommandList.Capacity">
+      <summary>
+        <para>
+ The capacity in bytes for storing commands in the command list.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.Clear">
+      <summary>
+        <para>
+ Clears all commands from the command list.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.ClearProperty(Unity.Hierarchy.HierarchyPropertyUnmanaged`1&lt;T&gt;&amp;,Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Clears a property value for the specified hierarchy node.
+ </para>
+      </summary>
+      <param name="property">The hierarchy property.</param>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>true if the command was appended to the list, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.ClearProperty(Unity.Hierarchy.HierarchyPropertyString&amp;,Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Clears a property value for the specified hierarchy node.
+ </para>
+      </summary>
+      <param name="property">The hierarchy property.</param>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>true if the command was appended to the list, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.#ctor(Unity.Hierarchy.Hierarchy,System.Int32)">
+      <summary>
+        <para>
+ Constructs a new HierarchyCommandList.
+ </para>
+      </summary>
+      <param name="hierarchy">The hierarchy.</param>
+      <param name="initialCapacity">The initial required capacity in bytes.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.Dispose">
+      <summary>
+        <para>
+ Disposes the command list and releases its memory.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.Execute">
+      <summary>
+        <para>
+ Executes all the commands in the hierarchy command list.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.ExecuteIncremental">
+      <summary>
+        <para>
+ Executes one command from the hierarchy command list.
+ </para>
+      </summary>
+      <returns>
+        <para>true if the command was appended to the list, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.ExecuteIncrementalTimed(System.Double)">
+      <summary>
+        <para>
+ Executes commands from the hierarchy command list until a time limit is reached.
+ </para>
+      </summary>
+      <param name="milliseconds">The time limit in milliseconds.</param>
+      <returns>
+        <para>true if additional invocations are needed to complete the execution, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyCommandList.IsCreated">
+      <summary>
+        <para>
+ Determines if this object is valid and uses memory.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyCommandList.IsEmpty">
+      <summary>
+        <para>
+ Determines if the command list is empty.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyCommandList.IsExecuting">
+      <summary>
+        <para>
+ Determines if the command list is currently executing.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.Remove(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Removes a node from the hierarchy.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node to remove.</param>
+      <returns>
+        <para>true if the command was appended to the list, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.RemoveChildren(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Recursively removes all children of a node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>true if the command was appended to the list, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.Reserve(System.Int32)">
+      <summary>
+        <para>
+ Reserves memory for nodes to use. Use this to avoid memory allocation hits when you add batches of nodes.
+ </para>
+      </summary>
+      <param name="count">The number of nodes to reserve memory for.</param>
+      <returns>
+        <para>true if the command was appended to the list, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.SetName(Unity.Hierarchy.HierarchyNode&amp;,System.String)">
+      <summary>
+        <para>
+ Sets a name for a hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="name">The name of the node.</param>
+      <returns>
+        <para>true if the command was appended to the list, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.SetParent(Unity.Hierarchy.HierarchyNode&amp;,Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Sets the parent node of a hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node to set a parent for.</param>
+      <param name="parent">The hierarchy node to set as the parent node.</param>
+      <returns>
+        <para>true if the command was appended to the list, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.SetProperty(Unity.Hierarchy.HierarchyPropertyUnmanaged`1&lt;T&gt;&amp;,Unity.Hierarchy.HierarchyNode&amp;,T)">
+      <summary>
+        <para>
+ Sets a value for a property of a hierarchy node.
+ </para>
+      </summary>
+      <param name="name">The property name.</param>
+      <param name="node">The hierarchy node.</param>
+      <param name="value">The property value.</param>
+      <param name="property"></param>
+      <returns>
+        <para>true if the command was appended to the list, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.SetProperty(Unity.Hierarchy.HierarchyPropertyString&amp;,Unity.Hierarchy.HierarchyNode&amp;,System.String)">
+      <summary>
+        <para>
+ Sets a value for a property of a hierarchy node
+ </para>
+      </summary>
+      <param name="name">The property name.</param>
+      <param name="node">The hierarchy node.</param>
+      <param name="value">The property value.</param>
+      <param name="property"></param>
+      <returns>
+        <para>true if the command was appended to the list, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.SetSortIndex(Unity.Hierarchy.HierarchyNode&amp;,System.Int32)">
+      <summary>
+        <para>
+ Sets the sorting index for a hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node to set a sorting index for.</param>
+      <param name="sortIndex">The sorting index.</param>
+      <returns>
+        <para>true if the command was appended to the list, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyCommandList.Size">
+      <summary>
+        <para>
+ The current size in bytes used by commands in the command list.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyCommandList.SortChildren(Unity.Hierarchy.HierarchyNode&amp;,System.Boolean)">
+      <summary>
+        <para>
+ Sorts the child nodes of a hierarchy node by their sort index.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node with child nodes to sort by their index.</param>
+      <param name="recurse">Whether to sort the child nodes recursively.</param>
+      <returns>
+        <para>true if the command was appended to the list, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyFlattened">
+      <summary>
+        <para>
+ Represents a read-only array of HierarchyFlattenedNode over a Hierarchy. Used as an acceleration structure for query purposes.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattened.Contains(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Determines if a specified node is in the hierarchy flattened.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>true if the node is found, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattened.Count">
+      <summary>
+        <para>
+ The total number of nodes.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattened.#ctor(Unity.Hierarchy.Hierarchy)">
+      <summary>
+        <para>
+ Cosntructs a new HierarchyFlattened.
+ </para>
+      </summary>
+      <param name="hierarchy">The hierarchy.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattened.Dispose">
+      <summary>
+        <para>
+ Disposes this object to release its memory.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattened.EnumerateChildren(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets an enumerable of children HierarchyNode for the specified node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The children enumerable.</para>
+      </returns>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyFlattened.Enumerator">
+      <summary>
+        <para>
+ An enumerator of HierarchyFlattenedNode.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattened.Enumerator.Current">
+      <summary>
+        <para>
+ Gets the current iterator item.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattened.Enumerator.MoveNext">
+      <summary>
+        <para>
+ Moves iterator to the next item.
+ </para>
+      </summary>
+      <returns>
+        <para>Returns true if the current value is valid. </para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattened.GetChildrenCount(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the number of child nodes that a hierarchy node has.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The number of children.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattened.GetChildrenCountRecursive(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the number of child nodes that a hierarchy node has, including children of children.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The number of child nodes, including children of children.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattened.GetDepth(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Determines the depth of a node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The depth of the hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattened.GetEnumerator">
+      <summary>
+        <para>
+ Gets the HierarchyFlattenedNode enumerator.
+ </para>
+      </summary>
+      <returns>
+        <para>An enumerator.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattened.GetNextSibling(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the next sibling of a node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>A hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattened.GetParent(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the parent of a hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>A hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattened.Hierarchy">
+      <summary>
+        <para>
+ Accesses the hierarchy.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattened.IndexOf(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the zero-based index of a specified node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>A zero-based index of the node if found, and -1 otherwise.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattened.IsCreated">
+      <summary>
+        <para>
+ Whether this object is valid and uses memory or not.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattened.this">
+      <summary>
+        <para>
+ Gets the HierarchyFlattenedNode at a specified index.
+ </para>
+      </summary>
+      <param name="index">The node index.</param>
+      <returns>
+        <para>A flattened hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattened.Update">
+      <summary>
+        <para>
+ Updates the flattened hierarchy and requests a rebuild of the list of HierarchyFlattenedNode from the Hierarchy topology.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattened.UpdateIncremental">
+      <summary>
+        <para>
+ Updates the flattened hierarchy incrementally.
+ </para>
+      </summary>
+      <returns>
+        <para>true if additional invocations are needed to complete the update, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattened.UpdateIncrementalTimed(System.Double)">
+      <summary>
+        <para>
+ Incrementally updates the flattened hierarchy until a time limit is reached.
+ </para>
+      </summary>
+      <param name="milliseconds">The time period in milliseconds.</param>
+      <returns>
+        <para>true if additional invocations are needed to complete the update, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattened.UpdateNeeded">
+      <summary>
+        <para>
+ Determines if the flattened hierarchy needs an update.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattened.Updating">
+      <summary>
+        <para>
+ Whether the flattened hierarchy is currently updating.
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyFlattenedNode">
+      <summary>
+        <para>
+ Represents a flattened hierarchy node.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattenedNode.ChildrenCount">
+      <summary>
+        <para>
+ The number of children nodes that the node has.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattenedNode.#ctor">
+      <summary>
+        <para>
+ Creates a flattened node.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattenedNode.Depth">
+      <summary>
+        <para>
+ The depth of the node.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattenedNode.NextSiblingOffset">
+      <summary>
+        <para>
+ The offset of the next sibling of the node.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattenedNode.Node">
+      <summary>
+        <para>
+ The hierarchy node referenced.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattenedNode.Null">
+      <summary>
+        <para>
+ Represents a flattened hierarchy node that is null or invalid.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattenedNode.ParentOffset">
+      <summary>
+        <para>
+ The offset of the parent of the node.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattenedNode.Type">
+      <summary>
+        <para>
+ The type of the hierarchy node.
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyFlattenedNodeChildren">
+      <summary>
+        <para>
+ Represents an enumerable over the children of an HierarchyNode.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattenedNodeChildren.Count">
+      <summary>
+        <para>
+ Gets the number of children.
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyFlattenedNodeChildren.Enumerator">
+      <summary>
+        <para>
+ An enumerator of HierarchyNode.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattenedNodeChildren.Enumerator.Current">
+      <summary>
+        <para>
+ Get the current item being enumerated.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattenedNodeChildren.Enumerator.MoveNext">
+      <summary>
+        <para>
+ Move to next iterable value.
+ </para>
+      </summary>
+      <returns>
+        <para>true if Current item is valid, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyFlattenedNodeChildren.GetEnumerator">
+      <summary>
+        <para>
+ Gets the HierarchyNode enumerator.
+ </para>
+      </summary>
+      <returns>
+        <para>An enumerator.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyFlattenedNodeChildren.this">
+      <summary>
+        <para>
+ Gets the child at the specified index.
+ </para>
+      </summary>
+      <param name="index">The children index.</param>
+      <returns>
+        <para>The child hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyNode">
+      <summary>
+        <para>
+ Represents a hierarchy node.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNode.#ctor">
+      <summary>
+        <para>
+ Creates a hierarchy node.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyNode.Id">
+      <summary>
+        <para>
+ The unique identification number of the hierarchy node.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyNode.Null">
+      <summary>
+        <para>
+ Represents a hierarchy node that is null or invalid.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyNode.Version">
+      <summary>
+        <para>
+ The version number of the hierarchy node.
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyNodeChildren">
+      <summary>
+        <para>
+ A read-only collection of a hierarchy node's children.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyNodeChildren.Count">
+      <summary>
+        <para>
+ The number of children.
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyNodeChildren.Enumerator">
+      <summary>
+        <para>
+ An enumerator for a hierarchy node's children.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyNodeChildren.Enumerator.Current">
+      <summary>
+        <para>
+ Get the current item being enumerated.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeChildren.Enumerator.MoveNext">
+      <summary>
+        <para>
+ Move to next iterable value.
+ </para>
+      </summary>
+      <returns>
+        <para>true if Current item is valid, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeChildren.GetEnumerator">
+      <summary>
+        <para>
+ Gets an enumerator for the children.
+ </para>
+      </summary>
+      <returns>
+        <para>The enumerator.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyNodeChildren.this">
+      <summary>
+        <para>
+ Gets the child at the specified index.
+ </para>
+      </summary>
+      <param name="index">The children index.</param>
+      <returns>
+        <para>The child hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyNodeFlags">
+      <summary>
+        <para>
+ Bit flags used to describe the state of a hierarchy node.
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchyNodeFlags.Cut">
+      <summary>
+        <para>
+ The hierarchy node is cut.
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchyNodeFlags.Expanded">
+      <summary>
+        <para>
+ The hierarchy node is expanded.
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchyNodeFlags.Hidden">
+      <summary>
+        <para>
+ The hierarchy node is hidden (also hides children).
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchyNodeFlags.None">
+      <summary>
+        <para>
+ The hierarchy node has no flags.
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchyNodeFlags.Selected">
+      <summary>
+        <para>
+ The hierarchy node is selected.
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyNodeMapUnmanaged`1">
+      <summary>
+        <para>
+ Represents a collection of HierarchyNode and values of type T with O(1) access time.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.Add(Unity.Hierarchy.HierarchyNode&amp;,T&amp;)">
+      <summary>
+        <para>
+ Adds the specified HierarchyNode and value to the HierarchyNodeMapUnmanaged_1.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="value">The value.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.AddNoResize(Unity.Hierarchy.HierarchyNode&amp;,T&amp;)">
+      <summary>
+        <para>
+ Adds the specified HierarchyNode and value to the HierarchyNodeMapUnmanaged_1 without increasing capacity.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="value">The value.</param>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.Capacity">
+      <summary>
+        <para>
+ The number of elements that can be contained in the HierarchyNodeMapUnmanaged_1 without resizing.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.Clear">
+      <summary>
+        <para>
+ Removes all HierarchyNode and values from the HierarchyNodeMapUnmanaged_1.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.ContainsKey(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Determine whether or not the HierarchyNodeMapUnmanaged_1 contains the specified HierarchyNode.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>true if the HierarchyNodeMapUnmanaged_1 contains the specified HierarchyNode, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.Count">
+      <summary>
+        <para>
+ The number of elements contained in the HierarchyNodeMapUnmanaged_1.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.#ctor(Unity.Collections.Allocator)">
+      <summary>
+        <para>
+ Constructs a new HierarchyNodeMapUnmanaged_1.
+ </para>
+      </summary>
+      <param name="allocator">The memory allocator.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.#ctor(T&amp;,Unity.Collections.Allocator)">
+      <summary>
+        <para>
+ Constructs a new HierarchyNodeMapUnmanaged_1.
+ </para>
+      </summary>
+      <param name="initValue">The value to use to initialize memory.</param>
+      <param name="allocator">The memory allocator.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.Dispose">
+      <summary>
+        <para>
+ Dispose this object and release its memory.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.IsCreated">
+      <summary>
+        <para>
+ Whether or not this object is valid and uses memory.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.Remove(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Removes the value with the specified HierarchyNode from the HierarchyNodeMapUnmanaged_1.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>true if the HierarchyNode is found and removed, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.Reserve(System.Int32)">
+      <summary>
+        <para>
+ Reserve enough memory to contain the specified number of elements.
+ </para>
+      </summary>
+      <param name="capacity">The requested capacity.</param>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.this">
+      <summary>
+        <para>
+ Gets or sets the value associated with the specified HierarchyNode.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The value associated with the specified HierarchyNode.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.TryAdd(Unity.Hierarchy.HierarchyNode&amp;,T&amp;)">
+      <summary>
+        <para>
+ Attempts to add the specified HierarchyNode and value to the HierarchyNodeMapUnmanaged_1.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="value">The value.</param>
+      <returns>
+        <para>true if the HierarchyNode/value pair was added to the HierarchyNodeMapUnmanaged_1, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.TryAddNoResize(Unity.Hierarchy.HierarchyNode&amp;,T&amp;)">
+      <summary>
+        <para>
+ Attempts to add the specified HierarchyNode and value to the HierarchyNodeMapUnmanaged_1 without increasing capacity.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="value">The value.</param>
+      <returns>
+        <para>true if the HierarchyNode/value pair was added to the HierarchyNodeMapUnmanaged_1, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeMapUnmanaged_1.TryGetValue(Unity.Hierarchy.HierarchyNode&amp;,T&amp;)">
+      <summary>
+        <para>
+ Gets the value associated with the specified HierarchyNode.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="value">The value.</param>
+      <returns>
+        <para>true if the HierarchyNodeMapUnmanaged_1 contains the specified HierarchyNode, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyNodeType">
+      <summary>
+        <para>
+ Type descriptor for a node in Hierarchy. Corresponds to the NodeType of the HierarchyNodeHandler.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeType.#ctor">
+      <summary>
+        <para>
+ Creates a null node type.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyNodeType.Id">
+      <summary>
+        <para>
+ The unique identification number of the hierarchy node type.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyNodeType.Null">
+      <summary>
+        <para>
+ Represents a hierarchy node type that is null or invalid.
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyNodeTypeHandlerBase">
+      <summary>
+        <para>
+ Provides a base class for hierarchy node type handlers.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeTypeHandlerBase.ChangesPending">
+      <summary>
+        <para>
+ Callback that determines if pending changes from a registered node type handler need to be applied to the hierarchy. When the hierarchy is updated, ChangesPending is called on all registered node ype handlers. If they return true, then IntegrateChanges is called on them. If they return false, then IntegrateChanges is not called on them.
+ </para>
+      </summary>
+      <returns>
+        <para>true if changes are pending, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyNodeTypeHandlerBase.CommandList">
+      <summary>
+        <para>
+ Get the HierarchyCommandList associated with this handler.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeTypeHandlerBase.Dispose">
+      <summary>
+        <para>
+ Disposes this hierarchy node type handler to free up resources in the derived class.
+ </para>
+      </summary>
+      <param name="disposing">Returns true if called from Dispose, false otherwise.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeTypeHandlerBase.Dispose">
+      <summary>
+        <para>
+ Disposes this hierarchy node type handler to free up resources.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeTypeHandlerBase.GetDefaultNodeFlags">
+      <summary>
+        <para>
+ Get the default value used to initialize a hierarchy node flags.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="defaultFlags">The default hierarchy node flags.</param>
+      <returns>
+        <para>The default flags of the hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeTypeHandlerBase.GetNodeType">
+      <summary>
+        <para>
+ Retrieves the hierarchy node type for this hierarchy node type handler.
+ </para>
+      </summary>
+      <returns>
+        <para>The type of the hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeTypeHandlerBase.GetNodeTypeName">
+      <summary>
+        <para>
+ Get the type name of this hierarchy node type handler.
+ </para>
+      </summary>
+      <returns>
+        <para>The type name of the hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyNodeTypeHandlerBase.Hierarchy">
+      <summary>
+        <para>
+ Get the Unity.Hierarchy.Hierarchy owning this handler.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeTypeHandlerBase.Initialize">
+      <summary>
+        <para>
+ Initializes this hierarchy node type handler.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeTypeHandlerBase.IntegrateChanges(Unity.Hierarchy.HierarchyCommandList)">
+      <summary>
+        <para>
+ Callback that determines if changes from an update need to be integrated into the hierarchy. IntegrateChanges is called after ChangesPending returns true. When the hierarchy is updated, ChangesPending is called on all registered node ype handlers. If they return true, then IntegrateChanges is called on them. If they return false, then IntegrateChanges is not called on them.
+ </para>
+      </summary>
+      <param name="cmdList">A hierarchy command list that can modify the hierarchy.</param>
+      <returns>
+        <para>true if more invocations are needed to complete integrating changes, and false if the handler is done integrating changes.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeTypeHandlerBase.SearchBegin(Unity.Hierarchy.HierarchySearchQueryDescriptor)">
+      <summary>
+        <para>
+ Called when a new search query begins.
+ </para>
+      </summary>
+      <param name="query">The search query descriptor.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeTypeHandlerBase.SearchEnd">
+      <summary>
+        <para>
+ Called when a search query ends.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeTypeHandlerBase.SearchMatch">
+      <summary>
+        <para>
+ Determines if a node matches the search query.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>true if the node matches the search query, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyNodeTypeHandlerBaseEnumerable">
+      <summary>
+        <para>
+ A read-only collection of hierarchy node type handler base.
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyNodeTypeHandlerBaseEnumerable.Enumerator">
+      <summary>
+        <para>
+ An enumerator for hierarchy node type handlers base.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyNodeTypeHandlerBaseEnumerable.Enumerator.Current">
+      <summary>
+        <para>
+ Get the current item being enumerated.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeTypeHandlerBaseEnumerable.Enumerator.Dispose">
+      <summary>
+        <para>
+ Dispose of the enumerator.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeTypeHandlerBaseEnumerable.Enumerator.MoveNext">
+      <summary>
+        <para>
+ Move to next iterable value.
+ </para>
+      </summary>
+      <returns>
+        <para>true if Current item is valid, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyNodeTypeHandlerBaseEnumerable.GetEnumerator">
+      <summary>
+        <para>
+ Gets an enumerator for the node type handlers.
+ </para>
+      </summary>
+      <returns>
+        <para>An enumerator.</para>
+      </returns>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyPropertyDescriptor">
+      <summary>
+        <para>
+ Describes the type and size of a Hierarchy Property.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyPropertyDescriptor.Size">
+      <summary>
+        <para>
+ The size of the property in bytes.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyPropertyDescriptor.Type">
+      <summary>
+        <para>
+ The storage type of the property.
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyPropertyStorageType">
+      <summary>
+        <para>
+ Describes how property values of a specific property are stored in memory.
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchyPropertyStorageType.Blob">
+      <summary>
+        <para>
+ The property is stored as a binary blob.
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchyPropertyStorageType.Default">
+      <summary>
+        <para>
+ The property is stored in the default storage type. Dense is the default storage type.
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchyPropertyStorageType.Dense">
+      <summary>
+        <para>
+ The property is stored in a compact array of values. In a dense array, memory is allocated for a node only if the node has a value for the property.
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchyPropertyStorageType.Sparse">
+      <summary>
+        <para>
+ The property is stored in a sparse array. In a sparse array, memory is allocated for each node regardless if the node has a value for the property or not.
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyPropertyString">
+      <summary>
+        <para>
+ Provides access to string property data.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyPropertyString.ClearValue(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Removes the property value for a HierarchyNode.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyPropertyString.GetValue(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the property value for the given HierarchyNode.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The property value of the hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyPropertyString.IsCreated">
+      <summary>
+        <para>
+ Returns true if the native property is valid.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyPropertyString.SetValue(Unity.Hierarchy.HierarchyNode&amp;,System.String)">
+      <summary>
+        <para>
+ Sets the property value for a HierarchyNode.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="value">The value to set.</param>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyPropertyUnmanaged`1">
+      <summary>
+        <para>
+ Provides strongly typed access to unmanaged property data.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyPropertyUnmanaged_1.ClearValue(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Removes the property value for a HierarchyNode.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyPropertyUnmanaged_1.GetValue(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the property value for the given HierarchyNode.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The property value of the hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyPropertyUnmanaged_1.IsCreated">
+      <summary>
+        <para>
+ Returns true if the native property is valid.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyPropertyUnmanaged_1.SetValue(Unity.Hierarchy.HierarchyNode&amp;,T)">
+      <summary>
+        <para>
+ Sets the property value for a HierarchyNode.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="value">The value to set.</param>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchySearchFilter">
+      <summary>
+        <para>
+ Encapsulates all data needed to filter a hierarchy.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchFilter.Invalid">
+      <summary>
+        <para>
+ The default invalid HierarchySearchFilter. This assumes the Hierarchy has a query, but is invalid, so no nodes are shown.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchFilter.IsValid">
+      <summary>
+        <para>
+ Whether the filter is valid and has a name.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchFilter.Name">
+      <summary>
+        <para>
+ The name of the filter.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchFilter.NumValue">
+      <summary>
+        <para>
+ Filter numerical value.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchFilter.Op">
+      <summary>
+        <para>
+ The filter search operator.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchySearchFilter.ToOp(System.String)">
+      <summary>
+        <para>
+ Converts a textual value to its operator value if possible. 
+ </para>
+      </summary>
+      <param name="op"></param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchySearchFilter.ToString(Unity.Hierarchy.HierarchySearchFilterOperator)">
+      <summary>
+        <para>
+ Converts an operator to its textual value.
+ </para>
+      </summary>
+      <param name="op">The filter operator</param>
+      <returns>
+        <para>The operator textual value.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchFilter.Value">
+      <summary>
+        <para>
+ The textual value of the filter.
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchySearchFilterOperator">
+      <summary>
+        <para>
+ Represents options for search filter operators. A colon (:) is the "contains" operator. A "-" is a "not" operator.
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchySearchFilterOperator.Contains">
+      <summary>
+        <para>
+ Checks if a filter value occurs within the right-hand operand. For instance, with a string value Contains uses string.Contains. 
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchySearchFilterOperator.Equal">
+      <summary>
+        <para>
+ Checks if a filter value is equal to the right-hand operand.
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchySearchFilterOperator.Greater">
+      <summary>
+        <para>
+ Checks if a numerical filter value is greater than the right-hand operand.
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchySearchFilterOperator.GreaterOrEqual">
+      <summary>
+        <para>
+ Checks if a numerical filter value is greater than or equal to the right-hand operand.
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchySearchFilterOperator.Lesser">
+      <summary>
+        <para>
+ Checks if a numerical filter value is less than the right-hand operand.
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchySearchFilterOperator.LesserOrEqual">
+      <summary>
+        <para>
+ Checks if a numerical filter value is less than or equal to the right-hand operand.
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchySearchFilterOperator.Not">
+      <summary>
+        <para>
+ Checks for items that do not match the filter value. 
+ </para>
+      </summary>
+    </member>
+    <member name="F:Unity.Hierarchy.HierarchySearchFilterOperator.NotEqual">
+      <summary>
+        <para>
+ Checks if a filter value is different than the right-hand operand.
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchySearchQueryDescriptor">
+      <summary>
+        <para>
+ Encapsulates all the query filters and text values that are used to filter a hierarchy.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchySearchQueryDescriptor.#ctor(Unity.Hierarchy.HierarchySearchFilter[],System.String[])">
+      <summary>
+        <para>
+ The constructor for a query.
+ </para>
+      </summary>
+      <param name="filters">List of user filters</param>
+      <param name="textValues">List of textual values.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchySearchQueryDescriptor.#ctor(Unity.Hierarchy.HierarchySearchQueryDescriptor)">
+      <summary>
+        <para>
+ Copy constructor for a Query.
+ </para>
+      </summary>
+      <param name="desc">Query to copy.</param>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchQueryDescriptor.Empty">
+      <summary>
+        <para>
+ The default empty query.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchQueryDescriptor.Filters">
+      <summary>
+        <para>
+ User-defined filters. Filters are in this form [filterName][operator][filterValue]. For example: t:Light. Each of these filters can be used by a NodeHandler to filter according to domain-specific characteristics.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchQueryDescriptor.Invalid">
+      <summary>
+        <para>
+ Whether the query invalid. An invalid query yields no node.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchQueryDescriptor.InvalidQuery">
+      <summary>
+        <para>
+ The default invalid query.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchQueryDescriptor.IsEmpty">
+      <summary>
+        <para>
+ Whether the query is empty. 
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchQueryDescriptor.IsSystemOnlyQuery">
+      <summary>
+        <para>
+ Whether the query uses system filters. This means NodeHandlers won't be called for filtering.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchQueryDescriptor.IsValid">
+      <summary>
+        <para>
+ Whether the query is valid.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchQueryDescriptor.Strict">
+      <summary>
+        <para>
+ Whether the query is evaluated strictly. This means that if any filters are invalid, then the whole query is invalid.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchQueryDescriptor.SystemFilters">
+      <summary>
+        <para>
+ The filters used by the hierarchy. Filters are in this form: [filterName][operator][filterValue]. For example: nodetype:gameobject. These filters are global to all NodeHandlers.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchySearchQueryDescriptor.TextValues">
+      <summary>
+        <para>
+ All textual values. For example: "cube"
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyViewModel">
+      <summary>
+        <para>
+ A hierarchy view model is a read-only filtering view of a HierarchyFlattened.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.ClearFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Clears the specified flags on all hierarchy nodes.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.ClearFlags(Unity.Hierarchy.HierarchyNode&amp;,Unity.Hierarchy.HierarchyNodeFlags,System.Boolean)">
+      <summary>
+        <para>
+ Clears the specified flags on the hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="flags">The hierarchy node flags.</param>
+      <param name="recurse">Whether or not to clear the flags on all children recursively for that hierarchy node.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.ClearFlags(System.ReadOnlySpan`1&lt;Unity.Hierarchy.HierarchyNode&gt;,Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Clears the specified flags on the hierarchy nodes.
+ </para>
+      </summary>
+      <param name="nodes">The hierarchy nodes.</param>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The number of nodes that had their flags cleared.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.ClearFlags(System.ReadOnlySpan`1&lt;System.Int32&gt;,Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Clears the specified flags on the hierarchy node indices.
+ </para>
+      </summary>
+      <param name="indices">The hierarchy node indices.</param>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The number of nodes that had their flags cleared.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.Contains(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Determines if a specified node is in the hierarchy view model.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>true if the node is found, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyViewModel.Count">
+      <summary>
+        <para>
+ The total number of nodes.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.#ctor(Unity.Hierarchy.HierarchyFlattened,Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Cosntructs a new HierarchyViewModel.
+ </para>
+      </summary>
+      <param name="hierarchyFlattened">The flattened hierarchy that serves as the hierarchy model.</param>
+      <param name="defaultFlags">The default flags used to initialize new nodes.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.Dispose">
+      <summary>
+        <para>
+ Disposes this object and releases its memory.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.DoesNotHaveAllFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets whether or not all of the specified flags are not set on any hierarchy node.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>true if none of the node have all of the flags set, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.DoesNotHaveAllFlags(Unity.Hierarchy.HierarchyNode&amp;,Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets whether or not all of the specified flags are not set on the hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>true if all of the flags are not set, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.DoesNotHaveAllFlagsCount(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets the number of nodes that do not have all of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The number of nodes that do not have all of the flags set.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.DoesNotHaveAnyFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets whether or not any of the specified flags are not set on any hierarchy node.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>true if none of the node have any of the flags set, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.DoesNotHaveAnyFlags(Unity.Hierarchy.HierarchyNode&amp;,Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets whether or not any of the specified flags are not set on the hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>true if none of the flags are set, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.DoesNotHaveAnyFlagsCount(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets the number of nodes that do not have any of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The number of nodes that do not have any of the flags set.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.EnumerateNodesWithAllFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets an enumerable of all hierarchy nodes that have all of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>An enumerable of hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.EnumerateNodesWithAnyFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets an enumerable of all hierarchy nodes that have any of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>An enumerable of hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.EnumerateNodesWithoutAllFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets an enumerable of all hierarchy nodes that do not have all of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>An enumerable of hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.EnumerateNodesWithoutAnyFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets an enumerable of all hierarchy nodes that do not have any of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>An enumerable of hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyViewModel.Enumerator">
+      <summary>
+        <para>
+ An enumerator of HierarchyNode. Enumerates and filters items at the same time.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyViewModel.Enumerator.Current">
+      <summary>
+        <para>
+ Get the current item being enumerated.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.Enumerator.MoveNext">
+      <summary>
+        <para>
+ Move to next iterable value.
+ </para>
+      </summary>
+      <returns>
+        <para>Returns true if Current item is valid</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetChildrenCount(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the number of child nodes that a hierarchy node has.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The number of children.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetChildrenCountRecursive(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the number of child nodes that a hierarchy node has, including children of children.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The number of child nodes, including children of children.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetDepth(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Determines the depth of a node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The depth of the hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetEnumerator">
+      <summary>
+        <para>
+ Gets the HierarchyNode enumerator.
+ </para>
+      </summary>
+      <returns>
+        <para>An enumerator.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetFlags(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets all the flags set on a given hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The flags set on the hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetIndicesWithAllFlags(Unity.Hierarchy.HierarchyNodeFlags,System.Span`1&lt;System.Int32&gt;)">
+      <summary>
+        <para>
+ Gets the indices for all hierarchy nodes that have all of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <param name="outIndices">The hierarchy node indices.</param>
+      <returns>
+        <para>The number of indices written in the  span.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetIndicesWithAllFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets the indices for all hierarchy nodes that have all of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The hierarchy node indices.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetIndicesWithAnyFlags(Unity.Hierarchy.HierarchyNodeFlags,System.Span`1&lt;System.Int32&gt;)">
+      <summary>
+        <para>
+ Gets the indices for all hierarchy nodes that have any of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <param name="outIndices">The hierarchy node indices.</param>
+      <returns>
+        <para>The number of indices written in the  span.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetIndicesWithAnyFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets the indices for all hierarchy nodes that have any of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The hierarchy node indices.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetIndicesWithoutAllFlags(Unity.Hierarchy.HierarchyNodeFlags,System.Span`1&lt;System.Int32&gt;)">
+      <summary>
+        <para>
+ Gets the indices of all hierarchy nodes that do not have all of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <param name="outIndices">The hierarchy node indices.</param>
+      <returns>
+        <para>The number of indices written in the  span.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetIndicesWithoutAllFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets the indices of all hierarchy nodes that do not have all of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The hierarchy node indices.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetIndicesWithoutAnyFlags(Unity.Hierarchy.HierarchyNodeFlags,System.Span`1&lt;System.Int32&gt;)">
+      <summary>
+        <para>
+ Gets the indices of all hierarchy nodes that do not have any of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <param name="outIndices">The hierarchy node indices.</param>
+      <returns>
+        <para>The number of indices written in the  span.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetIndicesWithoutAnyFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets the indices of all hierarchy nodes that do not have any of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The hierarchy node indices.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetNextSibling(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the next sibling of a node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>A hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetNodesWithAllFlags(Unity.Hierarchy.HierarchyNodeFlags,System.Span`1&lt;Unity.Hierarchy.HierarchyNode&gt;)">
+      <summary>
+        <para>
+ Gets all hierarchy nodes that have all of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <param name="outNodes">The hierarchy nodes.</param>
+      <returns>
+        <para>The number of nodes written in the  span.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetNodesWithAllFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets all hierarchy nodes that have all of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The hierarchy nodes.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetNodesWithAnyFlags(Unity.Hierarchy.HierarchyNodeFlags,System.Span`1&lt;Unity.Hierarchy.HierarchyNode&gt;)">
+      <summary>
+        <para>
+ Gets all hierarchy nodes that have any of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <param name="outNodes">The hierarchy nodes.</param>
+      <returns>
+        <para>The number of nodes written in the  span.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetNodesWithAnyFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets all hierarchy nodes that have any of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The hierarchy nodes.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetNodesWithoutAllFlags(Unity.Hierarchy.HierarchyNodeFlags,System.Span`1&lt;Unity.Hierarchy.HierarchyNode&gt;)">
+      <summary>
+        <para>
+ Gets all hierarchy nodes that do not have all of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <param name="outNodes">The hierarchy nodes.</param>
+      <returns>
+        <para>The number of nodes written in the  span.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetNodesWithoutAllFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets all hierarchy nodes that do not have all of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The hierarchy nodes.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetNodesWithoutAnyFlags(Unity.Hierarchy.HierarchyNodeFlags,System.Span`1&lt;Unity.Hierarchy.HierarchyNode&gt;)">
+      <summary>
+        <para>
+ Gets all hierarchy nodes that do not have any of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <param name="outNodes">The hierarchy nodes.</param>
+      <returns>
+        <para>The number of nodes written in the  span.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetNodesWithoutAnyFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets all hierarchy nodes that do not have any of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The hierarchy nodes.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.GetParent(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the parent of a hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>A hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.HasAllFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets whether or not all of the specified flags are set on any hierarchy node.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>true if any node have all of the flags set, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.HasAllFlags(Unity.Hierarchy.HierarchyNode&amp;,Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets whether or not all of the specified flags are set on the hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>true if all of the flags are set, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.HasAllFlagsCount(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets the number of nodes that have all of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The number of nodes that have all of the flags set.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.HasAnyFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets whether or not any of the specified flags are set on any hierarchy node.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>true if any node have any of the flags set, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.HasAnyFlags(Unity.Hierarchy.HierarchyNode&amp;,Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets whether or not any of the specified flags are set on the hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>true if any of the flags are set, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.HasAnyFlagsCount(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Gets the number of nodes that have any of the specified flags set.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The number of nodes that have any of the flags set.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyViewModel.Hierarchy">
+      <summary>
+        <para>
+ Accesses the Hierarchy.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyViewModel.HierarchyFlattened">
+      <summary>
+        <para>
+ Accesses the HierarchyFlattened.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.IndexOf(Unity.Hierarchy.HierarchyNode&amp;)">
+      <summary>
+        <para>
+ Gets the zero-based index of a specified node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>A zero-based index of the node if found, -1 otherwise.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyViewModel.IsCreated">
+      <summary>
+        <para>
+ Whether this object is valid and uses memory.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.SetFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Sets the specified flags on all hierarchy nodes.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.SetFlags(Unity.Hierarchy.HierarchyNode&amp;,Unity.Hierarchy.HierarchyNodeFlags,System.Boolean)">
+      <summary>
+        <para>
+ Sets the specified flags on the hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="flags">The hierarchy node flags.</param>
+      <param name="recurse">Whether or not to set the flags on all children recursively for that hierarchy node.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.SetFlags(System.ReadOnlySpan`1&lt;Unity.Hierarchy.HierarchyNode&gt;,Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Sets the specified flags on the hierarchy nodes.
+ </para>
+      </summary>
+      <param name="nodes">The hierarchy nodes.</param>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The number of nodes that had their flags set.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.SetFlags(System.ReadOnlySpan`1&lt;System.Int32&gt;,Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Sets the specified flags on the hierarchy node indices.
+ </para>
+      </summary>
+      <param name="indices">The hierarchy node indices.</param>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The number of nodes that had their flags set.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.SetQuery(System.String)">
+      <summary>
+        <para>
+ Sets the search query.
+ </para>
+      </summary>
+      <param name="query">The search query.</param>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyViewModel.this">
+      <summary>
+        <para>
+ Gets the HierarchyNode at a specified index.
+ </para>
+      </summary>
+      <param name="index">The node index.</param>
+      <returns>
+        <para>A hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.ToggleFlags(Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Toggles the specified flags on all hierarchy nodes.
+ </para>
+      </summary>
+      <param name="flags">The hierarchy node flags.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.ToggleFlags(Unity.Hierarchy.HierarchyNode&amp;,Unity.Hierarchy.HierarchyNodeFlags,System.Boolean)">
+      <summary>
+        <para>
+ Toggles the specified flags on the hierarchy node.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="flags">The hierarchy node flags.</param>
+      <param name="recurse">Whether or not to clear the flags on all children recursively for that hierarchy node.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.ToggleFlags(System.ReadOnlySpan`1&lt;Unity.Hierarchy.HierarchyNode&gt;,Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Toggles the specified flags on the hierarchy nodes.
+ </para>
+      </summary>
+      <param name="nodes">The hierarchy nodes.</param>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The number of nodes that had their flags cleared.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.ToggleFlags(System.ReadOnlySpan`1&lt;System.Int32&gt;,Unity.Hierarchy.HierarchyNodeFlags)">
+      <summary>
+        <para>
+ Toggles the specified flags on the hierarchy node indices.
+ </para>
+      </summary>
+      <param name="indices">The hierarchy node indices.</param>
+      <param name="flags">The hierarchy node flags.</param>
+      <returns>
+        <para>The number of nodes that had their flags cleared.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.Update">
+      <summary>
+        <para>
+ Updates the hierarchy view model and requests a rebuild of the list of HierarchyNode that filters the HierarchyFlattened.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.UpdateIncremental">
+      <summary>
+        <para>
+ Updates the hierarchy view model incrementally.
+ </para>
+      </summary>
+      <returns>
+        <para>true if additional invocations are needed to complete the update, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewModel.UpdateIncrementalTimed(System.Double)">
+      <summary>
+        <para>
+ Updates the hierarchy view model incrementally until a time limit is reached.
+ </para>
+      </summary>
+      <param name="milliseconds">The time period in milliseconds.</param>
+      <returns>
+        <para>true if additional invocations are needed to complete the update, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyViewModel.UpdateNeeded">
+      <summary>
+        <para>
+ Whether the hierarchy view model requires an update.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyViewModel.Updating">
+      <summary>
+        <para>
+ Whether the hierarchy view model is currently updating.
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyViewNodesEnumerable">
+      <summary>
+        <para>
+ Represent an enumerable of HierarchyNode with specific HierarchyNodeFlags.
+ </para>
+      </summary>
+    </member>
+    <member name="T:Unity.Hierarchy.HierarchyViewNodesEnumerable.Enumerator">
+      <summary>
+        <para>
+ An enumerator of HierarchyNode.
+ </para>
+      </summary>
+    </member>
+    <member name="P:Unity.Hierarchy.HierarchyViewNodesEnumerable.Enumerator.Current">
+      <summary>
+        <para>
+ Get the current item being enumerated.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewNodesEnumerable.Enumerator.MoveNext">
+      <summary>
+        <para>
+ Move to next iterable value.
+ </para>
+      </summary>
+      <returns>
+        <para>true if Current item is valid, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.Hierarchy.HierarchyViewNodesEnumerable.GetEnumerator">
+      <summary>
+        <para>
+ Gets the HierarchyNode enumerator.
+ </para>
+      </summary>
+      <returns>
+        <para>An enumerator.</para>
+      </returns>
+    </member>
+    <member name="?:Unity.Hierarchy.IHierarchyProperty_1">
+      <summary>
+        <para>
+ An interface that is used to access strongly typed node data.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.IHierarchyProperty_1.ClearValue">
+      <summary>
+        <para>
+ Removes the property value for a HierarchyNode.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+    </member>
+    <member name="M:Unity.Hierarchy.IHierarchyProperty_1.GetValue">
+      <summary>
+        <para>
+ Gets the property value for the given HierarchyNode.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <returns>
+        <para>The property value of the hierarchy node.</para>
+      </returns>
+    </member>
+    <member name="P:Unity.Hierarchy.IHierarchyProperty_1.IsCreated">
+      <summary>
+        <para>
+ Returns true if the native property is valid.
+ </para>
+      </summary>
+    </member>
+    <member name="M:Unity.Hierarchy.IHierarchyProperty_1.SetValue">
+      <summary>
+        <para>
+ Sets the property value for a HierarchyNode.
+ </para>
+      </summary>
+      <param name="node">The hierarchy node.</param>
+      <param name="value">The value to set.</param>
+    </member>
+    <member name="A:UnityEngine.HierarchyCoreModule">
+      <summary>
+        <para>Module that contains a high-performance hierarchy container.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

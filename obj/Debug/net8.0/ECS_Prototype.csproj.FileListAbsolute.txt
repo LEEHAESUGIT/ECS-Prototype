@@ -1,0 +1,14 @@
+C:\Programming\ECS_Prototype\bin\Debug\net8.0\ECS_Prototype.exe
+C:\Programming\ECS_Prototype\bin\Debug\net8.0\ECS_Prototype.deps.json
+C:\Programming\ECS_Prototype\bin\Debug\net8.0\ECS_Prototype.runtimeconfig.json
+C:\Programming\ECS_Prototype\bin\Debug\net8.0\ECS_Prototype.dll
+C:\Programming\ECS_Prototype\bin\Debug\net8.0\ECS_Prototype.pdb
+C:\Programming\ECS_Prototype\obj\Debug\net8.0\ECS_Prototype.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programming\ECS_Prototype\obj\Debug\net8.0\ECS_Prototype.AssemblyInfoInputs.cache
+C:\Programming\ECS_Prototype\obj\Debug\net8.0\ECS_Prototype.AssemblyInfo.cs
+C:\Programming\ECS_Prototype\obj\Debug\net8.0\ECS_Prototype.csproj.CoreCompileInputs.cache
+C:\Programming\ECS_Prototype\obj\Debug\net8.0\ECS_Prototype.dll
+C:\Programming\ECS_Prototype\obj\Debug\net8.0\refint\ECS_Prototype.dll
+C:\Programming\ECS_Prototype\obj\Debug\net8.0\ECS_Prototype.pdb
+C:\Programming\ECS_Prototype\obj\Debug\net8.0\ECS_Prototype.genruntimeconfig.cache
+C:\Programming\ECS_Prototype\obj\Debug\net8.0\ref\ECS_Prototype.dll

@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ECSCore\**" />
+    <EmbeddedResource Remove="ECSCore\**" />
+    <None Remove="ECSCore\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="UnityEditor.CoreBusinessMetricsModule">
+      <HintPath>..\..\Program Files\Unity\Hub\Editor\6000.0.58f2\Editor\Data\Managed\UnityEngine\UnityEditor.CoreBusinessMetricsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\Program Files\Unity\Hub\Editor\6000.0.58f2\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+      <HintPath>..\..\Program Files\Unity\Hub\Editor\6000.0.58f2\Editor\Data\Managed\UnityEngine\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
