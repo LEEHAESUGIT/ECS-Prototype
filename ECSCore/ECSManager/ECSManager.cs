@@ -29,6 +29,8 @@
 // EntityRecord.Archetype -> (참조)ref Archetype
 
 
+using System.Xml;
+
 namespace ECSCore
 {
 	public class ECSManager
@@ -56,6 +58,8 @@ namespace ECSCore
 			//		NeedInit컴포넌트 삽입.
 			//		발급받은 엔티티ID, NeedInit이 포함된 컴포넌트 타입을 기준으로 엔티티 생성
 			// fin
+			if(IsTypeDuplication(componentTypes))
+				throw new ArgumentException("ComponentType Dublication ");
 
 			if (componentTypes.Length == 0)
 				throw new ArgumentException("Nothing Types");
@@ -148,8 +152,15 @@ namespace ECSCore
 			if (record.CapturedArchetype.IsNeedInit())
 				throw new InvalidOperationException("This Entity Is Need Init");
 
-			var typeIndex = record.CapturedArchetype.TypeIndexMap[new ComponentTypeID(ComponentTypeRegister.GetID(typeof(T)))];
-			return ref record.CapturedChunk.Get<T>(typeIndex, record.IndexInChunk);
+
+			if(record.CapturedArchetype.TypeIndexMap.TryGetValue(ComponentTypeRegister.GetID(typeof(T)), out int typeIndex))
+			{
+				return ref record.CapturedChunk.Get<T>(typeIndex,record.IndexInChunk);
+			}
+			throw new InvalidOperationException("didn't find ComponentType");
+
+			//var typeIndex = record.CapturedArchetype.TypeIndexMap[new ComponentTypeID(ComponentTypeRegister.GetID(typeof(T)))];
+			//return ref record.CapturedChunk.Get<T>(typeIndex, record.IndexInChunk);
 
 		}
 		#endregion
@@ -176,7 +187,7 @@ namespace ECSCore
 
 		#region Has
 		// Has
-		internal bool Has(Entity entity)
+		public bool Has(Entity entity)
 		{
 			if (!entityManager._entityRecord.TryGetValue(entity.ID, out var record))
 			{
@@ -189,6 +200,21 @@ namespace ECSCore
 			return true;
 		}
 		#endregion
+		internal bool IsTypeDuplication(params Type[] types)
+		{
+			HashSet<int> set = new HashSet<int>();
+			foreach (Type type in types)
+			{
+				if(!set.Add(ComponentTypeRegister.GetID(type)))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+
+
 	}
 
 }

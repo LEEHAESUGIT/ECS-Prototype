@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wsXNTDti7yk=",
+  "dgSpecHash": "fUgvxDrEmME=",
   "success": true,
-  "projectFilePath": "C:\\Programming\\ECS-Prototype\\ECSTest\\ECSTest.csproj",
+  "projectFilePath": "C:\\Users\\child\\ECS-Prototype\\ECSTest\\ECSTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\child\\.nuget\\packages\\coverlet.collector\\6.0.4\\coverlet.collector.6.0.4.nupkg.sha512",
     "C:\\Users\\child\\.nuget\\packages\\microsoft.applicationinsights\\2.23.0\\microsoft.applicationinsights.2.23.0.nupkg.sha512",

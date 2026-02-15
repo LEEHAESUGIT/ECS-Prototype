@@ -1703,11 +1703,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Programming\\ECS-Prototype\\ECSTest\\ECSTest.csproj",
+      "projectUniqueName": "C:\\Users\\child\\ECS-Prototype\\ECSTest\\ECSTest.csproj",
       "projectName": "ECSTest",
-      "projectPath": "C:\\Programming\\ECS-Prototype\\ECSTest\\ECSTest.csproj",
+      "projectPath": "C:\\Users\\child\\ECS-Prototype\\ECSTest\\ECSTest.csproj",
       "packagesPath": "C:\\Users\\child\\.nuget\\packages\\",
-      "outputPath": "C:\\Programming\\ECS-Prototype\\ECSTest\\obj\\",
+      "outputPath": "C:\\Users\\child\\ECS-Prototype\\ECSTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1728,8 +1728,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Programming\\ECS-Prototype\\ECSCore\\ECSCore.csproj": {
-              "projectPath": "C:\\Programming\\ECS-Prototype\\ECSCore\\ECSCore.csproj"
+            "C:\\Users\\child\\ECS-Prototype\\ECSCore\\ECSCore.csproj": {
+              "projectPath": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\ECSCore.csproj"
             }
           }
         }

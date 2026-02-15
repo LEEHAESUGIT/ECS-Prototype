@@ -2,12 +2,7 @@
 
 namespace ECSCore
 {
-	internal class ComponentTypeID
-	{
-		internal readonly int ID;
-		internal ComponentTypeID(int id) => ID = id;
-	}
-
+	
 	internal static class ComponentTypeRegister
 	{
 		internal static readonly Dictionary<Type, int> typeToID = new();

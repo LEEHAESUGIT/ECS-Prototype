@@ -85,17 +85,32 @@ namespace ECSTest
 			Entity includeNeedInitEntity = DummyECSmanager.CreateEntity(DummyTypes);
 			DummyECSmanager.Init(includeNeedInitEntity);
 			Assert.Throws<InvalidOperationException>(() => DummyECSmanager.Init(includeNeedInitEntity));
-		
+			
 
 			//  유효값 테스트
 			Type[] vaildTypes = { typeof(DummyHPComponent),
 									typeof(DummyATKComponent)};
 			Entity vaildEntity = DummyECSmanager.CreateEntity(vaildTypes);
 			EntityRecord DummyRecordforTest = DummyECSmanager.entityManager._entityRecord[vaildEntity.ID];
-			DummyECSmanager.Init(vaildEntity);
-
+			bool isNeedinit = false;
+			bool isAlive = false;
+			Entity DummyEntity = DummyECSmanager.Init(vaildEntity);
+			isAlive = DummyECSmanager.Has(DummyEntity);
+			foreach(Type type in DummyRecordforTest.CapturedArchetype.Types)
+			{
+				if(type == typeof(NeedInit))
+				{
+					isNeedinit = true;
+				}
+				else
+				{
+					isNeedinit = false;
+				}
+			}
+			ClassicAssert.IsTrue(isAlive);
+			ClassicAssert.IsFalse(isNeedinit);
 			//Assert.That(vaildTypes ,Is.EqualTo(DummyECSmanager.entityManager._entityRecord[vaildEntity.ID].CapturedArchetype.Types));
-			Assert.That(DummyRecordforTest, !Is.EqualTo(DummyECSmanager.entityManager._entityRecord[vaildEntity.ID]));
+			//Assert.That(DummyRecordforTest, Is.EqualTo(DummyECSmanager.entityManager._entityRecord[vaildEntity.ID]));
 		
 			
 		}
