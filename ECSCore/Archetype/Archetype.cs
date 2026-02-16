@@ -34,8 +34,8 @@ namespace ECSCore
 		// capacitySize = 16384 == 16kb
 		internal Archetype(Type[] types, int memorySize)
 		{
-			Types = types.OrderBy(t => t.FullName).ToArray();
-			ChunkMaxSize = Tool.CaculatorCapacityForSize(memorySize, types);
+			Types = types;
+			ChunkMaxSize = Tool.CaculatorCapacityForSize(memorySize, Types);
 			Chunks.Add(new Chunk(this));
 
 			for (int i = 0; i < Types.Length; i++)

@@ -58,7 +58,7 @@ namespace ECSCore
 			//		NeedInit컴포넌트 삽입.
 			//		발급받은 엔티티ID, NeedInit이 포함된 컴포넌트 타입을 기준으로 엔티티 생성
 			// fin
-			if(IsTypeDuplication(componentTypes))
+			if(IsTypeDuplication(out int[] sortTypeIDS , componentTypes))
 				throw new ArgumentException("ComponentType Dublication ");
 
 			if (componentTypes.Length == 0)
@@ -200,17 +200,25 @@ namespace ECSCore
 			return true;
 		}
 		#endregion
-		internal bool IsTypeDuplication(params Type[] types)
+		internal bool IsTypeDuplication(out int[] sortTypes ,params Type[] types)
 		{
+			//Types = types.OrderBy(t => t.FullName).ToArray();
 			HashSet<int> set = new HashSet<int>();
+
+			sortTypes = new int[types.Length];
+
+			int count = 0;
 			foreach (Type type in types)
 			{
-				if(!set.Add(ComponentTypeRegister.GetID(type)))
+				int id = ComponentTypeRegister.GetID(type);
+				sortTypes[count++] = id;
+				if(!set.Add(id))
 				{
 					return true;
 				}
 			}
-			return false;
+			Array.Sort(sortTypes);
+ 			return false;
 		}
 
 
