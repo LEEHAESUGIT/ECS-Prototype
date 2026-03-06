@@ -29,6 +29,8 @@
 // EntityRecord.Archetype -> (참조)ref Archetype
 
 
+using System;
+using System.Collections.Generic;
 using System.Xml;
 
 namespace ECSCore

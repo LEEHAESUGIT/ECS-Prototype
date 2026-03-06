@@ -1,4 +1,6 @@
-﻿// EntityManager  
+﻿using System;
+using System.Collections.Generic;
+// EntityManager  
 // 월드에서 존재하며, 실제 생성되고 관리되는 아키타입형식을 관리한다.
 // 관리방식은 딕셔너리를 사용해 해시값을 기준으로 아키타입들을 대입. 
 // 생성 , 삭제 , 아키타입관리는 이곳에서 한다.

@@ -2,6 +2,7 @@
 // 실제 컴포넌트의 모임, 컴포넌트들이 담기는장소. 딕셔너리 사용
 // 각 청크는 16kb 의 용량을 기준으로 관리된다. 16384byte
 // 
+using System;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("ECSTest")]

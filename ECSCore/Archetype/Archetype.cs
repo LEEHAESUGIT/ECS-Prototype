@@ -1,4 +1,7 @@
-﻿// Archetype
+﻿using System;
+using System.Collections.Generic;
+
+// Archetype
 // 틀 이라는 어원에 맞게 컴포넌트모임을 틀을 잡아 준다. 
 // 리스트를 사용해 Chunck배열을 관리한다.
 // 간단히 Archetype는 엔티티를 구성하기 위한 몰드의 역활이 되겠다.
