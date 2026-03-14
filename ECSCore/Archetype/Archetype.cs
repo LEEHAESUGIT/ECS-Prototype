@@ -35,9 +35,20 @@ namespace ECSCore
 		//				ㄴ ComponentArray[][] 컴포넌트 인덱스
 
 		// capacitySize = 16384 == 16kb
-		internal Archetype(Type[] types, int memorySize)
+		//internal Archetype(Type[] types, int memorySize)
+		//{
+		//	Types = types;
+		//	ChunkMaxSize = Tool.CaculatorCapacityForSize(memorySize, Types);
+		//	Chunks.Add(new Chunk(this));
+
+		//	for (int i = 0; i < Types.Length; i++)
+		//	{
+		//		TypeIndexMap.Add(ComponentTypeRegister.GetID(Types[i]), i);
+		//	}
+		//}
+		internal Archetype(int [] typesID, int memorySize)
 		{
-			Types = types;
+			Types = ComponentTypeRegister.ReturnTypesfor(typesID);
 			ChunkMaxSize = Tool.CaculatorCapacityForSize(memorySize, Types);
 			Chunks.Add(new Chunk(this));
 
@@ -46,6 +57,9 @@ namespace ECSCore
 				TypeIndexMap.Add(ComponentTypeRegister.GetID(Types[i]), i);
 			}
 		}
+
+		
+
 		private Chunk createChunk()
 		{
 			Chunk resultChunk = new Chunk(this);

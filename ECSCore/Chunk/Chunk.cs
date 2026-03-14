@@ -5,7 +5,6 @@
 using System;
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("ECSTest")]
 namespace ECSCore
 {
 	internal class Chunk

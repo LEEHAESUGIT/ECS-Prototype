@@ -51,6 +51,30 @@ namespace ECSCore
 		#region CreateEntity
 		// 처음 생성되는 객체는 기본값으로 NeedInit컴포넌트가 플래그로 들어간다.
 		// 초기화와 함께 NeedInit컴포넌트가 없이 초기화 가 된다.
+		//public Entity CreateEntity(params Type[] componentTypes)
+		//{
+		//	// ToDo
+		//	// 기능나누기
+		//	//		매개변수에 아무것도 들어오지 않았을때 예외처리
+		//	//		Stack인 freeID에서 재사용할 ID가 있는지 확인후 재발급 or 신규발급
+		//	//		NeedInit컴포넌트 삽입.
+		//	//		발급받은 엔티티ID, NeedInit이 포함된 컴포넌트 타입을 기준으로 엔티티 생성
+		//	// fin
+		//	if(IsTypeDuplication(out int[] sortTypeIDS , componentTypes))
+		//		throw new ArgumentException("ComponentType Dublication ");
+
+		//	if (componentTypes.Length == 0)
+		//		throw new ArgumentException("Nothing Types");
+
+		//	int resultID = entityIdIssuance(freeID);
+		//	Type[] resultCombineTypes = insertNeedInit(componentTypes);
+		//	sortTypeIDS = ComponentTypeRegister.ReturnTypesIDfor(resultCombineTypes);
+
+
+
+
+		//	return entityManager.SpawnEntityRecord(resultID, sortTypeIDS);
+		//}
 		public Entity CreateEntity(params Type[] componentTypes)
 		{
 			// ToDo
@@ -60,16 +84,16 @@ namespace ECSCore
 			//		NeedInit컴포넌트 삽입.
 			//		발급받은 엔티티ID, NeedInit이 포함된 컴포넌트 타입을 기준으로 엔티티 생성
 			// fin
-			if(IsTypeDuplication(out int[] sortTypeIDS , componentTypes))
+			if (IsTypeDuplication( componentTypes))
 				throw new ArgumentException("ComponentType Dublication ");
 
 			if (componentTypes.Length == 0)
 				throw new ArgumentException("Nothing Types");
 
 			int resultID = entityIdIssuance(freeID);
-			Type[] resultCombineTypes = insertNeedInit(componentTypes);
-			
-			return entityManager.SpawnEntityRecord(resultID, resultCombineTypes);
+			int[] sortTypeIDs = insertNeedInit(componentTypes);
+
+			return entityManager.SpawnEntityRecord(resultID, sortTypeIDs);
 		}
 
 		// Check the stack for recycleID and Issuance
@@ -79,13 +103,21 @@ namespace ECSCore
 		}
 
 		// expend TypeArray and input NeedInit Component , return combineTypes 
-		internal Type[] insertNeedInit(Type[] componentTypes)
-		{
-			Type[] combineTypes = new Type[componentTypes.Length + 1];
-			Array.Copy(componentTypes, combineTypes, componentTypes.Length);
-			combineTypes[^1] = typeof(NeedInit);
+		//internal Type[] insertNeedInit(Type[] componentTypes)
+		//{
+		//	Type[] combineTypes = new Type[componentTypes.Length + 1];
+		//	Array.Copy(componentTypes, combineTypes, componentTypes.Length);
+		//	combineTypes[^1] = typeof(NeedInit);
 
-			return combineTypes;
+		//	return combineTypes;
+		//}
+		internal int[] insertNeedInit(Type[] componentTypes)
+		{
+			int[] tempTypeIDs = new int[componentTypes.Length +1];
+			tempTypeIDs = ComponentTypeRegister.ReturnTypesIDfor(componentTypes);
+			tempTypeIDs[^1] = ComponentTypeRegister.GetID(typeof(NeedInit));
+
+			return tempTypeIDs;
 		}
 		#endregion
 
@@ -113,6 +145,7 @@ namespace ECSCore
 				throw new InvalidOperationException("Entity already initialized");
 
 			Type[] resultTypes = removeNeedInit(record.CapturedArchetype.Types);
+			int[] resultTypesID = ComponentTypeRegister.ReturnTypesIDfor(resultTypes);
 
 			//Type[] types = record.CapturedArchetype.Types;
 			//Type[] resultTypes = new Type[types.Length - 1];
@@ -125,7 +158,7 @@ namespace ECSCore
 			//		resultTypes[count++] = type;
 			//	}
 			//}
-			return entityManager.InitEntityRecord(entity.ID, resultTypes);
+			return entityManager.InitEntityRecord(entity.ID, resultTypesID);
 		}
 		internal Type[] removeNeedInit(Type[] componentTypes)
 		{
@@ -202,44 +235,49 @@ namespace ECSCore
 			return true;
 		}
 		#endregion
-		internal bool IsTypeDuplication(out int[] sortTypes ,params Type[] types)
+		//internal bool IsTypeDuplication(out int[] sortTypes ,params Type[] types)
+		//{
+		//	// 오름차순 정렬
+		//	HashSet<int> set = new HashSet<int>();
+
+		//	sortTypes = new int[types.Length];
+
+		//	int count = 0;
+		//	foreach (Type type in types)
+		//	{
+		//		int id = ComponentTypeRegister.GetID(type);
+		//		sortTypes[count++] = id;
+		//		if(!set.Add(id))
+		//		{
+		//			return true;
+		//		}
+		//	}
+		//	Array.Sort(sortTypes);
+ 	//		return false;
+		//}
+		internal bool IsTypeDuplication(params Type[] types)
 		{
-			//Types = types.OrderBy(t => t.FullName).ToArray();
+			// 오름차순 정렬
 			HashSet<int> set = new HashSet<int>();
 
-			sortTypes = new int[types.Length];
+			int[] sortTypes = new int[types.Length];
 
 			int count = 0;
 			foreach (Type type in types)
 			{
 				int id = ComponentTypeRegister.GetID(type);
 				sortTypes[count++] = id;
-				if(!set.Add(id))
+				if (!set.Add(id))
 				{
 					return true;
 				}
 			}
 			Array.Sort(sortTypes);
- 			return false;
+			return false;
 		}
-
 
 
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
