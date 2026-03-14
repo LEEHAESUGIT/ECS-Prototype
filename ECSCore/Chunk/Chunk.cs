@@ -32,7 +32,7 @@ namespace ECSCore
 		// true: 청크가 꽉참, false : 청크가 비어있음
 		internal int IndexIssuance(int memorySize)
 		{
-			return IsMax(memorySize) ? 0 : ChunkCount++;
+			return IsMax(memorySize) ? -1 : ChunkCount++;
 		}
 		internal bool IsMax(int memorySize)
 		{
@@ -50,9 +50,9 @@ namespace ECSCore
 			for (int typeIndex = 0; typeIndex < ComponentArray.Length; typeIndex++)
 			{
 				Array.Copy(ComponentArray[typeIndex],
-							targetIndex,
-							ComponentArray[typeIndex],
 							lastIndex,
+							ComponentArray[typeIndex],
+							targetIndex,
 							1);
 				EntityIDs[targetIndex] = EntityIDs[lastIndex];
 			}
