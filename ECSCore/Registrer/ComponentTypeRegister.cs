@@ -29,7 +29,9 @@ namespace ECSCore
 			}
 			throw new InvalidOperationException();
 		}
+
 		internal static int GetID<T>() where T : struct, IComponentData => GetID(typeof(T));
+
 		internal static Type GetType(int typeID) => types[typeID];
 
 		internal static Type[] ReturnTypesfor(int[] typesID)
@@ -41,6 +43,7 @@ namespace ECSCore
 			}
 			return tempTypes;
 		}
+
 		internal static int[] ReturnTypesIDfor(Type[] types)
 		{
 			int[] tempTypesID = new int[types.Length];
@@ -50,6 +53,5 @@ namespace ECSCore
 			}
 			return tempTypesID;
 		}
-
 	}
 }

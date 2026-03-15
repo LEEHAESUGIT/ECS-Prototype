@@ -7,44 +7,28 @@
       "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\log.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\chunk\\chunk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\chunk\\chunk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\archetype\\archetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\archetype\\archetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\ecsmanager\\ecsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\ecsmanager\\ecsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\registrer\\componenttyperegister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\registrer\\componenttyperegister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\entity\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\entity\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\tool\\tool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\tool\\tool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\component\\componentgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\component\\componentgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\entity\\entityrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\entity\\entityrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\entity\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\entity\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\chunk\\chunk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\chunk\\chunk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\entity\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\entity\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\archetype\\archetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\archetype\\archetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\component\\componentgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\component\\componentgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\interface\\isystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -57,6 +41,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\interface\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\interface\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\entity\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\entity\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\tool\\tool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\tool\\tool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\registrer\\componenttyperegister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\registrer\\componenttyperegister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|c:\\users\\child\\ecs-prototype\\ecscore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3300B555-21EB-28DE-75C5-4F82440D2D5E}|ECSCore\\ECSCore.csproj|solutionrelative:ecscore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -65,31 +65,32 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 259,
+          "DockedWidth": 244,
           "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Program.cs",
               "RelativeDocumentMoniker": "ECSCore\\Program.cs",
               "ToolTip": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Program.cs",
               "RelativeToolTip": "ECSCore\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T09:42:24.274Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "ECSManager.cs",
               "DocumentMoniker": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\ECSManager\\ECSManager.cs",
               "RelativeDocumentMoniker": "ECSCore\\ECSManager\\ECSManager.cs",
               "ToolTip": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\ECSManager\\ECSManager.cs",
               "RelativeToolTip": "ECSCore\\ECSManager\\ECSManager.cs",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAcwIUAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAYwKMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T09:42:21.989Z",
               "IsPinned": true,
@@ -97,29 +98,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "EntityManager.cs",
               "DocumentMoniker": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Entity\\EntityManager.cs",
               "RelativeDocumentMoniker": "ECSCore\\Entity\\EntityManager.cs",
               "ToolTip": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Entity\\EntityManager.cs",
               "RelativeToolTip": "ECSCore\\Entity\\EntityManager.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAwHAAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAjwDcAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T09:43:15.26Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Tool.cs",
               "DocumentMoniker": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Tool\\Tool.cs",
               "RelativeDocumentMoniker": "ECSCore\\Tool\\Tool.cs",
               "ToolTip": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Tool\\Tool.cs",
               "RelativeToolTip": "ECSCore\\Tool\\Tool.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAcwBkAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAYwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T09:44:03.299Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -131,20 +134,21 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "ComponentTypeRegister.cs",
               "DocumentMoniker": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Registrer\\ComponentTypeRegister.cs",
               "RelativeDocumentMoniker": "ECSCore\\Registrer\\ComponentTypeRegister.cs",
               "ToolTip": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Registrer\\ComponentTypeRegister.cs",
               "RelativeToolTip": "ECSCore\\Registrer\\ComponentTypeRegister.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAswCYAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAMwDYAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T11:22:24.849Z"
+              "WhenOpened": "2026-03-12T11:22:24.849Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 217,
+          "DockedWidth": 232,
           "SelectedChildIndex": 8,
           "Children": [
             {
@@ -158,17 +162,18 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAswAMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T09:42:28.893Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Archetype.cs",
               "DocumentMoniker": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Archetype\\Archetype.cs",
               "RelativeDocumentMoniker": "ECSCore\\Archetype\\Archetype.cs",
               "ToolTip": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Archetype\\Archetype.cs",
               "RelativeToolTip": "ECSCore\\Archetype\\Archetype.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAIwEAAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAnwFsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T09:42:29.8Z",
               "IsPinned": true,
@@ -176,13 +181,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Chunk.cs",
               "DocumentMoniker": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Chunk\\Chunk.cs",
               "RelativeDocumentMoniker": "ECSCore\\Chunk\\Chunk.cs",
               "ToolTip": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Chunk\\Chunk.cs",
               "RelativeToolTip": "ECSCore\\Chunk\\Chunk.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAqwD4AAAADAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAuwBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T09:42:30.526Z",
               "IsPinned": true,
@@ -190,65 +195,69 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
               "Title": "EntityRecord.cs",
               "DocumentMoniker": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Entity\\EntityRecord.cs",
               "RelativeDocumentMoniker": "ECSCore\\Entity\\EntityRecord.cs",
               "ToolTip": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Entity\\EntityRecord.cs",
               "RelativeToolTip": "ECSCore\\Entity\\EntityRecord.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAYwBIAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAIwCQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T09:43:06.613Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 9,
               "Title": "IEntity.cs",
               "DocumentMoniker": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Interface\\IEntity.cs",
               "RelativeDocumentMoniker": "ECSCore\\Interface\\IEntity.cs",
               "ToolTip": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Interface\\IEntity.cs",
               "RelativeToolTip": "ECSCore\\Interface\\IEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T09:43:25.747Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 8,
               "Title": "IComponentData.cs",
               "DocumentMoniker": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Interface\\IComponentData.cs",
               "RelativeDocumentMoniker": "ECSCore\\Interface\\IComponentData.cs",
               "ToolTip": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Interface\\IComponentData.cs",
               "RelativeToolTip": "ECSCore\\Interface\\IComponentData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T09:43:25.197Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 7,
               "Title": "ISystem.cs",
               "DocumentMoniker": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Interface\\ISystem.cs",
               "RelativeDocumentMoniker": "ECSCore\\Interface\\ISystem.cs",
               "ToolTip": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Interface\\ISystem.cs",
               "RelativeToolTip": "ECSCore\\Interface\\ISystem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T09:43:26.22Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "ComponentGroup.cs",
               "DocumentMoniker": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Component\\ComponentGroup.cs",
               "RelativeDocumentMoniker": "ECSCore\\Component\\ComponentGroup.cs",
               "ToolTip": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Component\\ComponentGroup.cs",
               "RelativeToolTip": "ECSCore\\Component\\ComponentGroup.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAowCEAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwDQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T09:43:51.838Z",
               "IsPinned": true,
@@ -262,7 +271,7 @@
               "RelativeDocumentMoniker": "ECSCore\\Log.txt",
               "ToolTip": "C:\\Users\\child\\ECS-Prototype\\ECSCore\\Log.txt",
               "RelativeToolTip": "ECSCore\\Log.txt",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAABlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2026-03-07T10:10:01.442Z",
               "EditorCaption": ""

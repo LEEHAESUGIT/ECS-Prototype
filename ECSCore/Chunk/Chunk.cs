@@ -23,17 +23,20 @@ namespace ECSCore
 				ComponentArray[i] = Array.CreateInstance(archetype.Types[i], archetype.ChunkMaxSize);
 			}
 		}
+
 		internal ref T Get<T>(int typeIndex, int entityIndexID)
 			where T : struct, IComponentData
 		{
 			return ref ((T[])ComponentArray[typeIndex])[entityIndexID];
 		}
+
 		// 인덱스 발급
 		// true: 청크가 꽉참, false : 청크가 비어있음
 		internal int IndexIssuance(int memorySize)
 		{
 			return IsMax(memorySize) ? -1 : ChunkCount++;
 		}
+
 		internal bool IsMax(int memorySize)
 		{
 			if (ChunkCount >= memorySize)
@@ -59,6 +62,7 @@ namespace ECSCore
 			ChunkCount--;
 			return EntityIDs[targetIndex];
 		}
+
 		internal void InEntity(int id)
 		{
 			EntityIDs[ChunkCount - 1] = id;

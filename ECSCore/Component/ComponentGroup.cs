@@ -20,20 +20,17 @@ namespace ECSCore
 		}
 	}
 
-
-
-
-
 	// Status Components
 	internal struct HPComponent : IComponentData
 	{
 		internal float point;
 	}
+
 	internal struct DEFComponent : IComponentData
 	{
 		internal float point;
-
 	}
+
 	internal struct ATKComponent : IComponentData
 	{
 		internal float point;

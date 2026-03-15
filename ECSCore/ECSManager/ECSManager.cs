@@ -113,11 +113,12 @@ namespace ECSCore
 		//}
 		internal int[] insertNeedInit(Type[] componentTypes)
 		{
-			int[] tempTypeIDs = new int[componentTypes.Length +1];
-			tempTypeIDs = ComponentTypeRegister.ReturnTypesIDfor(componentTypes);
-			tempTypeIDs[^1] = ComponentTypeRegister.GetID(typeof(NeedInit));
+			int[] resultTypeIDs = new int[componentTypes.Length +1];
+			int[] idToTypes = ComponentTypeRegister.ReturnTypesIDfor(componentTypes);
+			Array.Copy(idToTypes , resultTypeIDs , idToTypes.Length);
+			resultTypeIDs[^1] = ComponentTypeRegister.GetID(typeof(NeedInit));
 
-			return tempTypeIDs;
+			return resultTypeIDs;
 		}
 		#endregion
 
@@ -160,6 +161,7 @@ namespace ECSCore
 			//}
 			return entityManager.InitEntityRecord(entity.ID, resultTypesID);
 		}
+
 		internal Type[] removeNeedInit(Type[] componentTypes)
 		{
 			Type[] resultTypes = new Type[componentTypes.Length - 1];
@@ -187,16 +189,13 @@ namespace ECSCore
 			if (record.CapturedArchetype.IsNeedInit())
 				throw new InvalidOperationException("This Entity Is Need Init");
 
-
 			if(record.CapturedArchetype.TypeIndexMap.TryGetValue(ComponentTypeRegister.GetID(typeof(T)), out int typeIndex))
 			{
 				return ref record.CapturedChunk.Get<T>(typeIndex,record.IndexInChunk);
 			}
 			throw new InvalidOperationException("didn't find ComponentType");
-
 			//var typeIndex = record.CapturedArchetype.TypeIndexMap[new ComponentTypeID(ComponentTypeRegister.GetID(typeof(T)))];
 			//return ref record.CapturedChunk.Get<T>(typeIndex, record.IndexInChunk);
-
 		}
 		#endregion
 
@@ -215,9 +214,7 @@ namespace ECSCore
 			entityManager.RelocationEntity(entity.ID);
 			entityManager._entityRecord[entity.ID].NextGeneration();
 			this.freeID.Push(entity.ID);
-
 		}
-
 		#endregion
 
 		#region Has
@@ -259,10 +256,9 @@ namespace ECSCore
 		{
 			// 오름차순 정렬
 			HashSet<int> set = new HashSet<int>();
-
 			int[] sortTypes = new int[types.Length];
-
 			int count = 0;
+
 			foreach (Type type in types)
 			{
 				int id = ComponentTypeRegister.GetID(type);
@@ -275,9 +271,6 @@ namespace ECSCore
 			Array.Sort(sortTypes);
 			return false;
 		}
-
-
 	}
-
 }
 

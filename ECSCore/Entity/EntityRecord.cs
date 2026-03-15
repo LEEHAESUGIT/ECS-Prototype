@@ -17,6 +17,7 @@
 			this.CapturedArchetype = archetype;
 			this.CapturedChunk = chunk;
 		}
+
 		internal bool IsAlive(int generation)
 		{
 			return this.Generation == generation ? true : false;
@@ -34,5 +35,4 @@
 			Generation++;
 		}
 	}
-
 }

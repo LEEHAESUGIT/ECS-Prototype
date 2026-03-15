@@ -11,9 +11,7 @@ namespace ECSCore
 {
 	internal class Archetype
 	{
-
 		internal readonly List<Chunk> Chunks = new();
-
 		// 불변
 		internal readonly Dictionary<int, int> TypeIndexMap = new();
 		internal readonly Type[] Types;
@@ -58,8 +56,6 @@ namespace ECSCore
 			}
 		}
 
-		
-
 		private Chunk createChunk()
 		{
 			Chunk resultChunk = new Chunk(this);
@@ -78,6 +74,7 @@ namespace ECSCore
 			}
 			return createChunk();
 		}
+
 		internal bool IsNeedInit()
 		{
 

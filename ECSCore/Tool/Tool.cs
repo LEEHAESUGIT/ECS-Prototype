@@ -23,11 +23,11 @@ namespace ECSCore
 			}
 			return hash;
 		}
+
 		internal static ulong CaculatorHash(int[] typesID)
 		{
 			ulong hash = 14695981039346656037UL;
 			Type[] tempTypes = ComponentTypeRegister.ReturnTypesfor(typesID);
-
 
 			foreach (var type in tempTypes)
 			{
@@ -39,6 +39,7 @@ namespace ECSCore
 			}
 			return hash;
 		}
+
 		internal static int CaculatorCapacityForSize(int memoryCapacity, Type[] types)
 		{
 			int expectCapacity = 0;
@@ -63,6 +64,7 @@ namespace ECSCore
 			// 청크인덱스 계산
 			return entitycount / chunkMaxSize;
 		}
+
 		internal static int CaculatorComponentIndex(int entitycount, int chunkMaxSize)
 		{
 			// 컴포넌트 인덱스 계산

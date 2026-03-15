@@ -100,7 +100,6 @@ namespace ECSCore
 			return archetype;
 		}
 
-
 		// 엔티티 전체 설계
 		internal Entity SpawnEntityRecord(int entityID, int[] typesID)
 		{
@@ -119,6 +118,7 @@ namespace ECSCore
 
 			return resultEntity;
 		}
+
 		internal Entity InitEntityRecord(int entityID, int[] typesID)
 		{
 			// 기존의 엔티티레코드 스왑백
@@ -135,21 +135,15 @@ namespace ECSCore
 			Entity initEntity = new Entity(entityID, _entityRecord[entityID].Generation);
 			// 청크 식별용 int배열이 존재하는데 여기에 엔티티아이디를 추가한다. 순서는 컴포넌트 어레이와 같다
 			initChunk.InEntity(initEntity.ID);
+
 			return initEntity;
 		}
 
-
-		/// <summary>
-		/// 엔티티 삭제시 
-		/// 청크의 카피
-		/// 엔티티레코드의 제네레이션 증가
-		/// </summary>
-		/// <param name="entityID"></param>
 		internal void RelocationEntity(int entityID)
 		{
 			EntityRecord record = _entityRecord[entityID];
-
 			int movedID = record.CapturedChunk.CopyFromLastIndex(record.IndexInChunk);
+
 			if (entityID != movedID)
 			{
 				_entityRecord[movedID].IndexInChunk = record.IndexInChunk;
@@ -157,6 +151,5 @@ namespace ECSCore
 			// 상위 World 에 있는 Remove에서 제네레이션을 올려준다.
 			//record.NextGeneration();
 		}
-
 	}
 }
