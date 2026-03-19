@@ -90,10 +90,30 @@ namespace ECSCore
 			//return false;
 		}
 
-		// 엔티티를 집어넣어 아키타입에서 현재 포함된 엔티티를 알수 있고,
-		// 리턴으로 컴포넌트 인덱스를 엔티티 레코드에 반환한다.
+		internal bool IncludeNeedType(EntityQuery query)
+		{
+			// 항상 갖공 있는
+			foreach(var all in query.All) 
+			{
+				if (!TypeIndexMap.ContainsKey(all))
+					return false; 
+			}
+			// 가지고 있으면 안되는
+			foreach(var none in query.None) 
+			{
+				if (TypeIndexMap.ContainsKey(none))
+					return false;
+			}
+			// 하나라도 있는 
+			foreach(var any in query.Any) 
+			{
+				if (!TypeIndexMap.ContainsKey(any))
+					return false;
+			}
 
-		// 청크s 의 내부를 돌아 빈공간에 청크를 확인한다.
+			return true;
+		}
+		
 
 	}
 

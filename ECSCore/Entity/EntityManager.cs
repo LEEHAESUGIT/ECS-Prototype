@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 // EntityManager  
 // 월드에서 존재하며, 실제 생성되고 관리되는 아키타입형식을 관리한다.
@@ -12,6 +13,7 @@ namespace ECSCore
 
 		private Dictionary<ulong, Archetype> Archetypes = new();
 		internal Dictionary<int, EntityRecord> _entityRecord = new();
+	
 
 		// 엔티티 생성할시 추가되는것.
 		// 엔티티
@@ -21,7 +23,6 @@ namespace ECSCore
 
 		private void recycleOrCreateRecord(int entityID, int entityIndex, Archetype resultArchetype, Chunk resultChunk)
 		{
-
 			//엔티티아이디를 받아 엔티티레코드 딕셔너리에서 키값으로 검색하여 존재하는지 확인.
 			if (_entityRecord.ContainsKey(entityID))
 			{
@@ -151,5 +152,12 @@ namespace ECSCore
 			// 상위 World 에 있는 Remove에서 제네레이션을 올려준다.
 			//record.NextGeneration();
 		}
+
+		internal IEnumerable<Archetype> GetAllArchetypes()
+		{
+			return Archetypes.Values;
+		}
+
+
 	}
 }

@@ -2,6 +2,7 @@
 {
 	public interface ISystem
 	{
-		public void OnUpdate(ECSManager world);
+		public void Set(ECSManager ecs);
+		public void OnUpdate(ECSManager ecs);
 	}
 }

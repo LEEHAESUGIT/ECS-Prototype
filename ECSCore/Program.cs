@@ -10,22 +10,21 @@ internal class Program
 		ECSManager world = new ECSManager();
 
 
-		for (int i = 0; i < 50; i++)
+		for (int i = 0; i < 100; i++)
 		{
 			entity[i] = world.CreateEntity(typeof(ATKComponent),
 								typeof(DEFComponent),
 								typeof(HPComponent));
 		}
 
-		for (int j = 0; j < 25; j++)
+		for (int j = 0; j < 100; j++)
 		{
 			world.Init(entity[j]);
 		}
-		world.Get<ATKComponent>(entity[0]).point = 100f;
-		world.Get<ATKComponent>(entity[26]).point = 1000f;
-		System.Console.WriteLine("ATKComponent =" + world.Get<ATKComponent>(entity[0]).point);
-		System.Console.WriteLine("ATKComponent =" + world.Get<ATKComponent>(entity[26]).point);
 
+		TestSystem test = new TestSystem();
+		test.Set(world);
+		test.OnUpdate(world);
 
 	}
 

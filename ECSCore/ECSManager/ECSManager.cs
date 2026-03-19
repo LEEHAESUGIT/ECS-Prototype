@@ -42,10 +42,16 @@ namespace ECSCore
 		private Stack<int> freeID = new Stack<int>();
 		public EntityManager entityManager = new EntityManager();
 
+
+		// Query
+		internal QueryManager _QM;
+		
+
 		public ECSManager()
 		{
 			// 컴포넌트 그룹 타입저장
 			ConponentSetting.SetComponent();
+			_QM = new QueryManager(entityManager);
 		}
 
 		#region CreateEntity
@@ -271,6 +277,13 @@ namespace ECSCore
 			Array.Sort(sortTypes);
 			return false;
 		}
+
+		internal QueryBuilder Query()
+		{
+			return new QueryBuilder(_QM);
+		}
+
+
 	}
 }
 
