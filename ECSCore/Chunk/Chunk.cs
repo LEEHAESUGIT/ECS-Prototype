@@ -24,11 +24,7 @@ namespace ECSCore
 			}
 		}
 
-		internal ref T Get<T>(int typeIndex, int entityIndexID)
-			where T : struct, IComponentData
-		{
-			return ref ((T[])ComponentArray[typeIndex])[entityIndexID];
-		}
+		
 
 		// 인덱스 발급
 		// true: 청크가 꽉참, false : 청크가 비어있음
@@ -66,6 +62,22 @@ namespace ECSCore
 		internal void InEntity(int id)
 		{
 			EntityIDs[ChunkCount - 1] = id;
+		}
+
+		// OutPut
+		internal ref T Get<T>(int typeIndex, int entityIndexID)
+			where T : struct, IComponentData
+		{
+			return ref ((T[])ComponentArray[typeIndex])[entityIndexID];
+		}
+
+		internal Span<T> GetSpan<T>(int typeIndex) where T : struct, IComponentData
+		{
+			if (typeIndex < 0 || typeIndex >= ComponentArray.Length)
+				throw new ArgumentOutOfRangeException("Out of Range");
+
+			var spanArray = (T[])ComponentArray[typeIndex];
+			return new Span<T>(spanArray , 0 , ChunkCount);
 		}
 
 	}

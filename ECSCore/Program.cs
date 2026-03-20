@@ -10,11 +10,13 @@ internal class Program
 		ECSManager world = new ECSManager();
 
 
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < 100; i+=2)
 		{
 			entity[i] = world.CreateEntity(typeof(ATKComponent),
 								typeof(DEFComponent),
 								typeof(HPComponent));
+			entity[i+1] = world.CreateEntity(typeof(HPComponent),
+								typeof(DEFComponent));
 		}
 
 		for (int j = 0; j < 100; j++)
