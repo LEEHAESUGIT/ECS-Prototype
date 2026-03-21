@@ -113,8 +113,15 @@ namespace ECSCore
 
 			return true;
 		}
-		
 
+		// For System
+		internal int GetTypeIndex<T>()
+		{
+			if (TypeIndexMap.TryGetValue(ComponentTypeRegister.GetID(typeof(T)), out int value))
+				return value;
+			else
+				throw new InvalidDataException("didn't have type in Archetype");
+		}
 	}
 
 
