@@ -8,55 +8,49 @@ namespace ECSCore
 		//internal static readonly int TypeID;
 
 		#region Archetype
-		internal static ulong CaculatorHash(Type[] types)
-		{
-			ulong hash = 14695981039346656037UL;
+		//internal static ulong CaculatorHash(Type[] types)
+		//{
+		//	ulong hash = 14695981039346656037UL;
 
-			//foreach (var type in types.OrderBy(t => t.Name))
-			foreach (var type in types)
+		//	//foreach (var type in types.OrderBy(t => t.Name))
+		//	foreach (var type in types)
+		//	{
+		//		{
+		//			ulong typehash = (ulong)type.GetHashCode();
+		//			hash ^= typehash;
+		//			hash *= 1099511628211UL;
+		//		}
+		//	}
+		//	return hash;
+		//}
+
+		//internal static ulong CaculatorHash(int[] typesID)
+		//{
+		//	ulong hash = 14695981039346656037UL;
+		//	Type[] tempTypes = ComponentTypeRegister.ReturnTypesfor(typesID);
+
+		//	foreach (var type in tempTypes)
+		//	{
+		//		{
+		//			ulong typehash = (ulong)type.GetHashCode();
+		//			hash ^= typehash;
+		//			hash *= 1099511628211UL;
+		//		}
+		//	}
+		//	return hash;
+		//}
+
+		internal static int CaculatorCapacityForSize(int memoryCapacity, ulong typeMask)
+		{
+			int typesMemory = 0;
+			for (int id = 0; id < ComponentTypeRegister.TypeCount; id++)
 			{
+				if (BitMaskRegister.IsIncludeTypeInBitMask(typeMask, id))
 				{
-					ulong typehash = (ulong)type.GetHashCode();
-					hash ^= typehash;
-					hash *= 1099511628211UL;
+					typesMemory += ComponentTypeRegister.GetSize(id);
 				}
 			}
-			return hash;
-		}
-
-		internal static ulong CaculatorHash(int[] typesID)
-		{
-			ulong hash = 14695981039346656037UL;
-			Type[] tempTypes = ComponentTypeRegister.ReturnTypesfor(typesID);
-
-			foreach (var type in tempTypes)
-			{
-				{
-					ulong typehash = (ulong)type.GetHashCode();
-					hash ^= typehash;
-					hash *= 1099511628211UL;
-				}
-			}
-			return hash;
-		}
-
-		internal static int CaculatorCapacityForSize(int memoryCapacity, Type[] types)
-		{
-			int expectCapacity = 0;
-			foreach (var type in types)
-			{
-				if (!type.IsValueType)
-				{
-					throw new InvalidOperationException($" Not value type");
-				}
-				else
-				{
-					expectCapacity += Marshal.SizeOf(type);
-				}
-			}
-			int size = memoryCapacity / expectCapacity;
-
-			return Math.Max(size, 1);
+			return Math.Max(memoryCapacity / typesMemory, 1);
 		}
 
 		internal static int CaculatorChunkIndex(int entitycount, int chunkMaxSize)

@@ -16,16 +16,18 @@ namespace ECSCore
 			this._EM = em;
 		}
 
-		public EntityQuery CreateQuery(int[]? _all = null , int[]? _none = null , int[]? _any = null)
+		public EntityQuery CreateQuery(ulong all = 0UL , ulong none = 0UL, ulong any = 0UL)
 		{
-			
-			EntityQuery resultQuery = new EntityQuery(	_all ?? Array.Empty<int>(), 
-														_none ?? Array.Empty<int>() , 
-														_any ?? Array.Empty<int>());
-			entityQuery.Add(resultQuery);
+
+			EntityQuery resultQuery = new EntityQuery(	all,
+														none ,
+														any );
 			return resultQuery;
 		}
-
+		public void AddQuery(EntityQuery EQ)
+		{
+			entityQuery.Add(EQ);
+		}
 
 	}
 }

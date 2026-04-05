@@ -16,11 +16,11 @@ namespace ECSCore
 
 		internal Chunk(Archetype archetype)
 		{
-			ComponentArray = new Array[archetype.Types.Length];
+			ComponentArray = new Array[archetype.ComponentTypeOrder.Length];
 			EntityIDs = new int[archetype.ChunkMaxSize];
 			for (int i = 0; i < ComponentArray.Length; i++)
 			{
-				ComponentArray[i] = Array.CreateInstance(archetype.Types[i], archetype.ChunkMaxSize);
+				ComponentArray[i] = Array.CreateInstance(ComponentTypeRegister.GetType(archetype.ComponentTypeOrder[i]), archetype.ChunkMaxSize);
 			}
 		}
 

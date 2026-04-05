@@ -5,6 +5,10 @@ using System.Collections.Generic;
 // 월드에서 존재하며, 실제 생성되고 관리되는 아키타입형식을 관리한다.
 // 관리방식은 딕셔너리를 사용해 해시값을 기준으로 아키타입들을 대입. 
 // 생성 , 삭제 , 아키타입관리는 이곳에서 한다.
+
+// q***************************비트마스크를 사용해서 타입을관리
+// ulong = 64개의 비트를 저장한다.
+
 namespace ECSCore
 {
 	public class EntityManager
@@ -13,6 +17,7 @@ namespace ECSCore
 
 		private Dictionary<ulong, Archetype> Archetypes = new();
 		internal Dictionary<int, EntityRecord> _entityRecord = new();
+
 	
 
 		// 엔티티 생성할시 추가되는것.
@@ -87,25 +92,37 @@ namespace ECSCore
 		//	return initEntity;
 		//}
 
-		private Archetype getOrCreateArchetype(int[] typesID, int capacity)
-		{
-			ulong tempHash = Tool.CaculatorHash(typesID);
+		//// id Version
+		//private Archetype getOrCreateArchetype(int[] typesID, int capacity)
+		//{
+		//	ulong tempHash = Tool.CaculatorHash(typesID);
 
-			// 해쉬값 비교 같은 키값이 없을경우 아키타입종류 추가
-			// 해쉬값이 같은 경우 아키타입 반환
-			if (!Archetypes.TryGetValue(tempHash, out var archetype))
+		//	// 해쉬값 비교 같은 키값이 없을경우 아키타입종류 추가
+		//	// 해쉬값이 같은 경우 아키타입 반환
+		//	if (!Archetypes.TryGetValue(tempHash, out var archetype))
+		//	{
+		//		archetype = new Archetype(typesID, capacity);
+		//		Archetypes.Add(tempHash, archetype);
+		//	}
+		//	return archetype;
+		//}
+
+		// bit version
+		private Archetype getOrCreateArchetype(ulong typeMask, int capacity)
+		{
+			if (!Archetypes.TryGetValue(typeMask, out var archetype))
 			{
-				archetype = new Archetype(typesID, capacity);
-				Archetypes.Add(tempHash, archetype);
+				archetype = new Archetype(typeMask, capacity);
+				Archetypes.Add(typeMask, archetype);
 			}
 			return archetype;
 		}
 
 		// 엔티티 전체 설계
-		internal Entity SpawnEntityRecord(int entityID, int[] typesID)
+		internal Entity SpawnEntityRecord(int entityID, ulong typeMask)
 		{
 			// 아키타입 생성
-			Archetype resultArchetype = getOrCreateArchetype(typesID, MemoryCapacity);
+			Archetype resultArchetype = getOrCreateArchetype(typeMask, MemoryCapacity);
 			// 아키타입 내부 엔티티를 할당할 청크 생성 or 호출
 			Chunk resultChunk = resultArchetype.RecycleOrCreateChunk();
 			// 엔티티레코드 - 아키타입엔티티 인덱스(청크내 컴포넌트 위치)
@@ -120,12 +137,12 @@ namespace ECSCore
 			return resultEntity;
 		}
 
-		internal Entity InitEntityRecord(int entityID, int[] typesID)
+		internal Entity InitEntityRecord(int entityID, ulong typeMask)
 		{
 			// 기존의 엔티티레코드 스왑백
 			RelocationEntity(entityID);
 			// 기존의 미초기화 아키타입에서 NeedInit를 제외한 모든 아키타입을 다시 생성.
-			Archetype initArchetype = getOrCreateArchetype(typesID, MemoryCapacity);
+			Archetype initArchetype = getOrCreateArchetype(typeMask, MemoryCapacity);
 			// 새로운 아키타입에서 청크에 할당.
 			Chunk initChunk = initArchetype.RecycleOrCreateChunk();
 			// 새로운 청크에 할당된 인덱스 위치.

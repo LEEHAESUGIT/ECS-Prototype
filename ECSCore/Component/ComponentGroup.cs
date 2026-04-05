@@ -6,17 +6,17 @@ namespace ECSCore
 		internal static void SetComponent()
 		{
 			// flag
-			ComponentTypeRegister.Set(typeof(NeedInit)); // 무조건 항상 0번째
-														 // Status
-			ComponentTypeRegister.Set(typeof(HPComponent));
-			ComponentTypeRegister.Set(typeof(ATKComponent));
-			ComponentTypeRegister.Set(typeof(DEFComponent));
+			ComponentTypeRegister.Set<NeedInit>(); // 무조건 항상 0번째
+			// Status
+			ComponentTypeRegister.Set<HPComponent>();
+			ComponentTypeRegister.Set<DEFComponent>();
+			ComponentTypeRegister.Set<ATKComponent>();
+									
+			ComponentTypeRegister.Set<EXPComponent>();
+			ComponentTypeRegister.Set<GOLDComponent>();
+			ComponentTypeRegister.Set<SPEEDComponent>();
 
-			// 
-			ComponentTypeRegister.Set(typeof(EXPComponent));
-			ComponentTypeRegister.Set(typeof(GOLDComponent));
-			ComponentTypeRegister.Set(typeof(SPEEDComponent));
-
+			ComponentTypeRegister.IsFrozen = false;
 		}
 	}
 
