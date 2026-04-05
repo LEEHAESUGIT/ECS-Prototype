@@ -10,9 +10,6 @@ namespace ECSCore
 	internal class QueryBuilder
 	{
 		private readonly QueryManager QM;
-		//internal readonly List<int> _All = new();
-		//internal readonly List<int> _None = new();
-		//internal readonly List<int> _Any = new();
 
 		internal ulong All_Mask = 0UL;
 		internal ulong None_Mask = 0UL ;
@@ -28,22 +25,19 @@ namespace ECSCore
 		internal QueryBuilder WithAll<T>() where T : struct ,IComponentData
 		{
 			All_Mask |= BitMaskRegister.ToMask(ComponentTypeRegister.GetID<T>());
-
 			return this;
 		}
-			//_All.Add(ComponentTypeRegister.GetID(typeof(T)));
+			
 
 		internal QueryBuilder WithNone<T>() where T : struct , IComponentData
 		{
 			None_Mask |= BitMaskRegister.ToMask(ComponentTypeRegister.GetID<T>());
-			//_None.Add(ComponentTypeRegister.GetID(typeof(T)));
 			return this;
 		}
 
 		internal QueryBuilder WithAny<T>() where T : struct,IComponentData
 		{
 			Any_Mask |= BitMaskRegister.ToMask(ComponentTypeRegister.GetID<T>());
-			//_Any.Add(ComponentTypeRegister.GetID(typeof(T)));
 			return this;
 		}
 
@@ -60,10 +54,6 @@ namespace ECSCore
 			this.All_Mask = 0UL;
 			this.None_Mask = 0UL;
 			this.Any_Mask = 0UL;
-
-			//this._All.Clear();
-			//this._None.Clear();
-			//this._Any.Clear();
 		}
 	}
 }

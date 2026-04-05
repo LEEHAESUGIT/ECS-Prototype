@@ -18,16 +18,6 @@ namespace ECSCore
 
 		internal static bool IsFrozen = false;
 
-
-		//internal static readonly Dictionary<ulong, int> ArchetypeNeedMenmory = new();
-		//internal static readonly List<int> TypeSizes = new();
-
-
-
-		//// 필수이고 자주사용되는 NeedInit 캐싱
-		//internal static readonly int NeedInitID = ComponentTypeRegister.GetID(typeof(NeedInit));
-		//internal static readonly ulong NeedInitMask = 1LU << NeedInitID;
-
 	 
 		internal  static int Set<T>() where T :  unmanaged,  IComponentData
 		{

@@ -18,10 +18,7 @@ namespace ECSCore
 
 		public EntityQuery CreateQuery(ulong all = 0UL , ulong none = 0UL, ulong any = 0UL)
 		{
-
-			EntityQuery resultQuery = new EntityQuery(	all,
-														none ,
-														any );
+			EntityQuery resultQuery = new EntityQuery(all , none , any );
 			return resultQuery;
 		}
 		public void AddQuery(EntityQuery EQ)

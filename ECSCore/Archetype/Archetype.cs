@@ -45,15 +45,16 @@ namespace ECSCore
 			this.typeMask = typeMask;
 
 			int typeCount = BitMaskRegister.CountTypeInBitMask(typeMask);
+			int componentCount = ComponentTypeRegister.TypeCount;
 
 			ComponentTypeOrder = new int[typeCount];
-			TypeIndexArray = new int[ComponentTypeRegister.TypeCount];
+			TypeIndexArray = new int[componentCount];
 
 			Array.Fill(TypeIndexArray , -1);
 
 			int count = 0;
 			
-			for(int id = 0; id < ComponentTypeRegister.TypeCount ; id++)
+			for(int id = 0; id < componentCount; id++)
 			{
 				if (BitMaskRegister.IsIncludeTypeInBitMask(typeMask, id))
 				{
@@ -88,7 +89,7 @@ namespace ECSCore
 
 		internal bool IsNeedInit()
 		{
-			int needInitID = ComponentTypeRegister.GetID(typeof(NeedInit));
+			int needInitID = ComponentTypeRegister.GetID<NeedInit>();
 			return BitMaskRegister.IsIncludeTypeInBitMask(typeMask,needInitID);
 		}
 
@@ -115,19 +116,6 @@ namespace ECSCore
 				throw new InvalidDataException("didn't have type in Archetype");
 			return TypeIndexArray[typeID];
 		}
-
-
-
-
-
-
-		//internal int GetTypeIndex<T>()
-		//{
-		//	if (TypeIndexMap.TryGetValue(ComponentTypeRegister.GetID(typeof(T)), out int value))
-		//		return value;
-		//	else
-		//		throw new InvalidDataException("didn't have type in Archetype");
-		//}
 	}
 
 

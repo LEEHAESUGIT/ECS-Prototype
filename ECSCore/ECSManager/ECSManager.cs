@@ -112,16 +112,6 @@ namespace ECSCore
 		{
 			return stackID.Count > 0 ? stackID.Pop() : nextID++; 
 		}
-
-		// expend TypeArray and input NeedInit Component , return combineTypes 
-		//internal Type[] insertNeedInit(Type[] componentTypes)
-		//{
-		//	Type[] combineTypes = new Type[componentTypes.Length + 1];
-		//	Array.Copy(componentTypes, combineTypes, componentTypes.Length);
-		//	combineTypes[^1] = typeof(NeedInit);
-
-		//	return combineTypes;
-		//}
 		
 		#endregion
 
@@ -170,14 +160,6 @@ namespace ECSCore
 			}
 			throw new InvalidOperationException("didn't find ComponentType");
 
-
-			//if (record.CapturedArchetype.TypeIndexMap.TryGetValue(ComponentTypeRegister.GetID(typeof(T)), out int typeIndex))
-			//{
-			//	return ref record.CapturedChunk.Get<T>(typeIndex, record.IndexInChunk);
-			//}
-			//throw new InvalidOperationException("didn't find ComponentType");
-			//var typeIndex = record.CapturedArchetype.TypeIndexMap[new ComponentTypeID(ComponentTypeRegister.GetID(typeof(T)))];
-			//return ref record.CapturedChunk.Get<T>(typeIndex, record.IndexInChunk);
 		}
 		#endregion
 
@@ -214,78 +196,7 @@ namespace ECSCore
 			return true;
 		}
 		#endregion
-		//internal bool IsTypeDuplication(out int[] sortTypes ,params Type[] types)
-		//{
-		//	// 오름차순 정렬
-		//	HashSet<int> set = new HashSet<int>();
-
-		//	sortTypes = new int[types.Length];
-
-		//	int count = 0;
-		//	foreach (Type type in types)
-		//	{
-		//		int id = ComponentTypeRegister.GetID(type);
-		//		sortTypes[count++] = id;
-		//		if(!set.Add(id))
-		//		{
-		//			return true;
-		//		}
-		//	}
-		//	Array.Sort(sortTypes);
-		//		return false;
-		//}
-
-		internal int[] insertNeedInit(int[] typeIDs)
-		{
-			int[] resultTypeIDs = new int[typeIDs.Length + 1];
-			
-			Array.Copy(typeIDs, resultTypeIDs, typeIDs.Length);
-			resultTypeIDs[^1] = ComponentTypeRegister.GetID(typeof(NeedInit));
-
-			return resultTypeIDs;
-		}
-		internal ulong removeNeedInit(ulong typeMask)
-		{
-			ulong resultTypeMask = 0;
-			int needInitTypeFlag = ComponentTypeRegister.GetID<NeedInit>();
-
-			resultTypeMask &= ~(1LU << needInitTypeFlag);
-
-			return resultTypeMask;
-		}
-		//internal Type[] removeNeedInit(Type[] componentTypes)
-		//{
-		//	Type[] resultTypes = new Type[componentTypes.Length - 1];
-		//	int typeFlag = ComponentTypeRegister.GetID<NeedInit>();
-		//	int count = 0;
-		//	foreach (var type in componentTypes)
-		//	{
-		//		if (typeFlag != ComponentTypeRegister.GetID(type))
-		//			resultTypes[count++] = type;
-		//	}
-		//	return resultTypes;
-		//}
-
-		internal bool IsTypeDuplication(params Type[] types)
-		{
-			// 오름차순 정렬
-			HashSet<int> set = new HashSet<int>();
-			int[] sortTypes = new int[types.Length];
-			int count = 0;
-
-			foreach (Type type in types)
-			{
-				int id = ComponentTypeRegister.GetID(type);
-				sortTypes[count++] = id;
-				if (!set.Add(id))
-				{
-					return true;
-				}
-			}
-			Array.Sort(sortTypes);
-			return false;
-		}
-
+		
 		internal QueryBuilder Query()
 		{
 			return new QueryBuilder(_QM);
