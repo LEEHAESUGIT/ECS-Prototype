@@ -27,6 +27,8 @@ namespace ECSCore
 
 		private  static int Set(Type type , int tpyeSize)
 		{
+			if (TypeToID.Count > 64)
+				throw new Exception("bitmask overflow");
 			if (IsFrozen)
 				throw new Exception("you can't import Component. Now Running");
 			if (type == null)
