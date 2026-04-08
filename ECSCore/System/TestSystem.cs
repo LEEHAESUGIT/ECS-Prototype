@@ -7,7 +7,7 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECSCore
+namespace LHS.ECS.Systems
 {
 	internal class TestSystem : ISystem
 	{

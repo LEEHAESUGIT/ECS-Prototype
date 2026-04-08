@@ -1,4 +1,4 @@
-﻿namespace ECSCore
+﻿namespace LHS.ECS.Interface
 {
 	public interface ISystem
 	{

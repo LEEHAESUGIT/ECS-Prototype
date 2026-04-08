@@ -1,5 +1,5 @@
 ﻿// Entity.ID -> EntityRecord[Index]   (엔티티레코드 리스트의 인덱스) 
-namespace ECSCore
+namespace LHS.ECS.Core
 {
 	public class Entity : IEntity
 	{

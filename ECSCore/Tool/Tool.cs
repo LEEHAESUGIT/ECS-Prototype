@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Runtime.InteropServices;
-namespace ECSCore
+namespace LHS.ECS.Core.Utils
 {
 	internal  class Tool
 	{

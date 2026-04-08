@@ -9,7 +9,7 @@ using System.Collections.Generic;
 // q***************************비트마스크를 사용해서 타입을관리
 // ulong = 64개의 비트를 저장한다.
 
-namespace ECSCore
+namespace LHS.ECS.Core
 {
 	public class EntityManager
 	{

@@ -34,7 +34,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Xml;
 
-namespace ECSCore
+namespace LHS.ECS.Core
 {
 	public class ECSManager
 	{
@@ -60,9 +60,7 @@ namespace ECSCore
 		{
 			if (typeBitMask == 0uL)
 				throw new ArgumentException("Nothing Types");
-			if()
-
-
+			
 			typeBitMask |= ComponentTypeRegister.Getbitmask(ComponentTypeRegister.GetID<NeedInit>());
 			int resultID = entityIdIssuance(freeID);
 

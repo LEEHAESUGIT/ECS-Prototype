@@ -1,5 +1,4 @@
-﻿using ECSCore;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO.Compression;
 
 internal class Program

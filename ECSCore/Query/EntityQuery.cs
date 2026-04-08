@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECSCore
+namespace LHS.ECS.Core.Query
 { 
 	internal class EntityQuery
 	{

@@ -1,5 +1,5 @@
 ﻿
-namespace ECSCore
+namespace LHS.ECS.Components
 {
 	internal static class ConponentSetting
 	{

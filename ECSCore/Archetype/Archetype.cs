@@ -7,7 +7,7 @@ using System.Collections.Generic;
 // 간단히 Archetype는 엔티티를 구성하기 위한 몰드의 역활이 되겠다.
 // 리스트 배열 Chunks내부에 요소는 각 16kb의 용량제한을 한다.
 // 실제 저장상태또한 타입별로 저장하는 동시에 용량제한을 넘길 시 리스트 요소를 증가시켜 Chunck를 증가시켜 저장한다.
-namespace ECSCore
+namespace LHS.ECS.Core
 {
 	internal class Archetype
 	{

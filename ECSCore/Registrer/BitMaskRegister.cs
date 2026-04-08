@@ -5,7 +5,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECSCore
+namespace LHS.ECS.Core.Utils
 {
 	internal static class BitMaskRegister
 	{

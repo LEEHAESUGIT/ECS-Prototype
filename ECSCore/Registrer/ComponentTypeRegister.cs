@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace ECSCore
+namespace LHS.ECS.Core.Utils
 {
 	internal static class ComponentTypeRegister
 	{

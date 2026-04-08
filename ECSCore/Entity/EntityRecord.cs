@@ -1,4 +1,4 @@
-﻿namespace ECSCore
+﻿namespace LHS.ECS.Core
 {
 
 	internal class EntityRecord
