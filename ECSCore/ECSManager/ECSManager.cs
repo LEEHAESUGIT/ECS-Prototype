@@ -88,6 +88,13 @@ namespace LHS.ECS.Core
 			// 생성할 엔티티를 스택에서 재사용할것이 있는지 확인.
 			int resultID = entityIdIssuance(freeID);
 
+			// Query Dirty
+			foreach (var entityQuery in _QM.entityQuery)
+			{
+				entityQuery.IsClean = true;
+			}
+
+
 			return entityManager.SpawnEntityRecord(resultID, typeMask);
 		}
 
@@ -117,6 +124,13 @@ namespace LHS.ECS.Core
 
 			if(!BitMaskRegister.IsIncludeTypeInBitMask(typeMask,ComponentTypeRegister.GetID<NeedInit>()))
 				throw new InvalidOperationException("Entity already initialized");
+
+			// Query Dirty
+			foreach (var entityQuery in _QM.entityQuery)
+			{
+				entityQuery.IsClean = true;
+			}
+
 
 			typeMask = BitMaskRegister.RemoveType(typeMask , ComponentTypeRegister.GetID<NeedInit>());
 			return entityManager.InitEntityRecord(entity.ID, typeMask);
@@ -162,6 +176,13 @@ namespace LHS.ECS.Core
 			entityManager.RelocationEntity(entity.ID);
 			entityManager._entityRecord[entity.ID].NextGeneration();
 			this.freeID.Push(entity.ID);
+
+			// Query Dirty
+			foreach (var entityQuery in _QM.entityQuery)
+			{
+				entityQuery.IsClean = true;
+			}	
+
 		}
 		#endregion
 
