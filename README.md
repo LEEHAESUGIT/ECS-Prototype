@@ -5,7 +5,7 @@
 # 개발 환경
 + IDE : Visual Studio 2022
 + .Net8.0
-+ Unity 6
++ Unity 6.3 LTS (6000.3.9f1)
 + Language : C#
 + Platform : x64
 + Dependencies : None (No external NuGet packages)
@@ -15,7 +15,7 @@
 + 동일한 컴포넌트를 가진 엔티티를 아키타입으로 그룹화 하여 효율적으로 처리
 + 아키타입 내부에 컴포넌트를 청크 배열로 저장해, 연속된 메모리 구조를 통해 데이터 접근 성능 향상
 + 조건에 맞는 엔티티를 조회하여 일괄 처리
-+ 객체 간 참조 대신 데이터 배열 기반으로 직접 접근하여 메모리 할당 및 GC 부담 감
++ 객체 간 참조 대신 데이터 배열 기반으로 직접 접근하여 메모리 할당 및 GC 부담 감소
 
 # 사용방법
 ## 시작전
@@ -151,7 +151,7 @@ ecsMG.Remove(entity);
 
 Query를 통해 EXComponent를 가진 엔티티를 조회하고, Archetype과 Chunk 단위로 순회하여 데이터를 직접 수정한다.
 ```
-public static void EXSystem(ECSManager ecs) : ISystem
+public static void EXSystem(ECSManager ecs)
 {
     var EXID = ComponentTypeRegister.GetID<EXComponent>();
 
@@ -180,7 +180,7 @@ public static void EXSystem(ECSManager ecs) : ISystem
 + System : 특정 컴포넌트 조합을 가진 엔티티를 대상으로 수행하는 처리 단위
 + Archetype : 동일한 컴포넌트 조합을 가진 엔티티 그룹
 + Chunk : 연속된 메모리 블록
-+ EntityRecord : 존재 하는 모든 엔티티의 상태와 위치를 추적하 레코드
++ EntityRecord : 존재 하는 모든 엔티티의 상태와 위치를 추적하는 레코드
 
 # 구성
 ```
