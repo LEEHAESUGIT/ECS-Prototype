@@ -221,7 +221,31 @@ ECSProject/
 └─────── README.md
 ```
 # 성능차이(by OOP)
+=====================ECSTest_Init_AVG ===================================
+ Sequential     : 61.54ms | Allocated_Memory : 19430599.00 | TimeToEntityCreate : 0.00  | MemoryToEntityCreate : 194.00 | GC0 : 0.9 , GC1 : 0.9 , GC2 : 0.9
+ Conditonal     : 48.93ms | Allocated_Memory : 19431413.00 | TimeToEntityCreate : 0.00  | MemoryToEntityCreate : 194.00 | GC0 : 0.9 , GC1 : 0.9 , GC2 : 0.9
+ Random         : 60.71ms | Allocated_Memory : 19480834.00 | TimeToEntityCreate : 0.00  | MemoryToEntityCreate : 194.00 | GC0 : 0.9 , GC1 : 0.9 , GC2 : 0.9
+ MultiComponent : 50.99ms | Allocated_Memory : 19430695.00 | TimeToEntityCreate : 0.00  | MemoryToEntityCreate : 194.00 | GC0 : 0.9 , GC1 : 0.9 , GC2 : 0.9
+ Caculation     : 54.81ms | Allocated_Memory : 19430248.00 | TimeToEntityCreate : 0.00  | MemoryToEntityCreate : 194.00 | GC0 : 0.9 , GC1 : 0.9 , GC2 : 0.9
+=====================ECSTest_Run_AVG===================================
+ Sequential     : 5.43ms | Allocated_Memory : 8000.00 | AVG_Process_Time : 0.00  | SecForProcess_Time : 1914059288.03 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
+ Conditonal     : 12.59ms | Allocated_Memory : 8000.00 | AVG_Process_Time : 0.00  | SecForProcess_Time : 794950947.05 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
+ Random         : 19.38ms | Allocated_Memory : 8000.00 | AVG_Process_Time : 0.00  | SecForProcess_Time : 523983629.24 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
+ MultiComponent : 9.24ms | Allocated_Memory : 8000.00 | AVG_Process_Time : 0.00  | SecForProcess_Time : 1086286696.41 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
+ Caculation     : 16.80ms | Allocated_Memory : 8000.00 | AVG_Process_Time : 0.00  | SecForProcess_Time : 602311615.03 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
 
+ =====================OOPTest_Init_AVG ===================================
+ Sequential     : 3.62ms | Allocated_Memory : 5600024.00 | TimeToEntityCreate : 0.00  | MemoryToEntityCreate : 56.00 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
+ Conditonal     : 3.39ms | Allocated_Memory : 5600024.00 | TimeToEntityCreate : 0.00  | MemoryToEntityCreate : 56.00 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
+ Random         : 4.80ms | Allocated_Memory : 6000048.00 | TimeToEntityCreate : 0.00  | MemoryToEntityCreate : 60.00 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
+ MultiComponent : 4.11ms | Allocated_Memory : 5600024.00 | TimeToEntityCreate : 0.00  | MemoryToEntityCreate : 56.00 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
+ Caculation     : 3.94ms | Allocated_Memory : 5600024.00 | TimeToEntityCreate : 0.00  | MemoryToEntityCreate : 56.00 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
+=====================OOPTest_Run_AVG===================================
+ Sequential     : 28.46ms | Allocated_Memory : 0.00 | AVG_Process_Time : 0.00  | SecForProcess_Time : 356812942.66 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
+ Conditonal     : 29.44ms | Allocated_Memory : 0.00 | AVG_Process_Time : 0.00  | SecForProcess_Time : 342840182.65 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
+ Random         : 151.65ms | Allocated_Memory : 0.00 | AVG_Process_Time : 0.02  | SecForProcess_Time : 65952917.79 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
+ MultiComponent : 79.81ms | Allocated_Memory : 0.00 | AVG_Process_Time : 0.01  | SecForProcess_Time : 125502383.18 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
+ Caculation     : 97.69ms | Allocated_Memory : 0.00 | AVG_Process_Time : 0.01  | SecForProcess_Time : 102407043.39 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
 
 # Why ECS?
 기존 OOP 구조에서 대량의 객체를 생성, 관리 하는 과정에서 발생하는 성능문제를 주제로 친구와 논의하다 흥미를 갖게 되었다. 
