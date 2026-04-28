@@ -221,6 +221,7 @@ ECSProject/
 └─────── README.md
 ```
 # 성능차이(by OOP)
+```
 =====================ECSTest_Init_AVG ===================================
  Sequential     : 61.54ms | Allocated_Memory : 19430599.00 | TimeToEntityCreate : 0.00  | MemoryToEntityCreate : 194.00 | GC0 : 0.9 , GC1 : 0.9 , GC2 : 0.9
  Conditonal     : 48.93ms | Allocated_Memory : 19431413.00 | TimeToEntityCreate : 0.00  | MemoryToEntityCreate : 194.00 | GC0 : 0.9 , GC1 : 0.9 , GC2 : 0.9
@@ -246,7 +247,7 @@ ECSProject/
  Random         : 151.65ms | Allocated_Memory : 0.00 | AVG_Process_Time : 0.02  | SecForProcess_Time : 65952917.79 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
  MultiComponent : 79.81ms | Allocated_Memory : 0.00 | AVG_Process_Time : 0.01  | SecForProcess_Time : 125502383.18 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
  Caculation     : 97.69ms | Allocated_Memory : 0.00 | AVG_Process_Time : 0.01  | SecForProcess_Time : 102407043.39 | GC0 : 0.0 , GC1 : 0.0 , GC2 : 0.0
-
+```
 # Why ECS?
 기존 OOP 구조에서 대량의 객체를 생성, 관리 하는 과정에서 발생하는 성능문제를 주제로 친구와 논의하다 흥미를 갖게 되었다. 
 프로그래밍을 공부하기 시작했을때부터 생각했던 class, struct 를 어떻게 나눠야 잘 구분되게 나뉘어 질까? 고민하다. 현실에 존재하는 모든것의 최소단위부터 시작하는게 어떨까 라는 생각을 했었다. 
