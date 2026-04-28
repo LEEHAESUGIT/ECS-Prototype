@@ -135,8 +135,7 @@ foreach (var archetype in Query_FilterForCaculation.GetArchetype(ecsMG.entityMan
 	}
 }
 ```
-
-## Entity 관리(Has/Remove)
+### Entity 관리(Has/Remove)
 ### Has
 1. 엔티티가 현재 존재하는 엔티티인지 확인하는 방법
 ```
@@ -147,4 +146,79 @@ if(ecsMG.Has(entity)){}
 ```
 ecsMG.Remove(entity);
 ```
+### System
 
+
+Query를 통해 EXComponent를 가진 엔티티를 조회하고, Archetype과 Chunk 단위로 순회하여 데이터를 직접 수정한다.
+```
+public static void EXSystem(ECSManager ecs)
+{
+    var EXID = ComponentTypeRegister.GetID<EXComponent>();
+
+    var query = ecs.Query()
+                   .withAll<EXComponent>();
+
+    foreach (var archetype in query.GetArchetype(ecs.entityManager))
+    {
+        var EX_IDx = archetype.GetTypeIndex(EXID);
+
+        foreach (var chunk in archetype.Chunks)
+        {
+            var span = chunk.GetSpan<EXComponent>(EX_IDx);
+
+            for (int i = 0; i < chunk.ChunkCount; i++)
+            {
+                span[i].point += 1f;
+            }
+        }
+    }
+}
+```
+# Architecture
++ Entity : ID 기반 식별자
++ Component : 순수 데이터 구조
++ System : 특정 컴포넌트 조합을 가진 엔티티를 대상으로 수행하는 처리 단위
++ Archetype : 동일한 컴포넌트 조합을 가진 엔티티 그룹
++ Chunk : 연속된 메모리 블록
++ EntityRecord : 존재 하는 모든 엔티티의 상태와 위치를 추적하 레코드
+
+# 구성
+```
+ECSProject/
+├── ECSCore/
+│ ├── Archetype/
+│ ├── Chunk/
+│ ├── Component/
+│ ├── ECSManager/
+│ ├── Entity/
+│ ├── GlobalUsing/
+│ ├── Interface/
+│ ├── Query/
+│ ├── Register/
+│ ├── System/
+│ ├── Tool/
+└── README.md
+
+
+
+
+
+│ ├── ECSManager.cs
+│ ├── Archetype.cs
+│ ├── Chunk.cs
+│ ├── Entity.cs
+│ ├── EntityRecord.cs
+│ ├── Query/
+│ │ └── QueryBuilder.cs
+│ ├── Component/
+│ │ ├── ComponentGroup.cs
+│ │ └── IComponentData.cs
+│ ├── Type/
+│ │ ├── ComponentTypeRegister.cs
+│ │ └── BitMaskRegister.cs
+│ └── System/
+│ └── EXSystem.cs
+├── Test/
+│ └── PerformanceTest.cs
+└── README.md
+```
