@@ -151,7 +151,7 @@ ecsMG.Remove(entity);
 
 Query를 통해 EXComponent를 가진 엔티티를 조회하고, Archetype과 Chunk 단위로 순회하여 데이터를 직접 수정한다.
 ```
-public static void EXSystem(ECSManager ecs)
+public static void EXSystem(ECSManager ecs) : ISystem
 {
     var EXID = ComponentTypeRegister.GetID<EXComponent>();
 
@@ -185,40 +185,34 @@ public static void EXSystem(ECSManager ecs)
 # 구성
 ```
 ECSProject/
-├── ECSCore/
-│ ├── Archetype/
-│ ├── Chunk/
-│ ├── Component/
-│ ├── ECSManager/
-│ ├── Entity/
-│ ├── GlobalUsing/
-│ ├── Interface/
-│ ├── Query/
-│ ├── Register/
-│ ├── System/
-│ ├── Tool/
-└── README.md
-
-
-
-
-
-│ ├── ECSManager.cs
-│ ├── Archetype.cs
-│ ├── Chunk.cs
-│ ├── Entity.cs
-│ ├── EntityRecord.cs
-│ ├── Query/
-│ │ └── QueryBuilder.cs
-│ ├── Component/
-│ │ ├── ComponentGroup.cs
-│ │ └── IComponentData.cs
-│ ├── Type/
-│ │ ├── ComponentTypeRegister.cs
-│ │ └── BitMaskRegister.cs
-│ └── System/
-│ └── EXSystem.cs
-├── Test/
-│ └── PerformanceTest.cs
-└── README.md
+├──── ECSCore/
+│ ├──── Archetype/
+│ │	└──── Archetype.cs
+│ ├──── Chunk/
+│ │	└──── Chunk.cs
+│ ├──── Component/
+│ │	└──── ComponentGroup.cs
+│ ├──── ECSManager/
+│ │	└──── ECSManager.cs
+│ ├──── Entity/
+│ │ ├──── Entity.cs
+│ │ ├──── EntityManager.cs
+│ │ └──── EntityRecord.cs
+│ ├──── GlobalUsing/
+│ │	└──── GlobalUsing.cs
+│ ├──── Interface/
+│ │ ├──── IComponentData.cs
+│ │ ├──── IEntity.cs
+│ │ └──── ISystem.cs
+│ ├──── Query/
+│ │ ├──── EntityQuery.cs
+│ │ ├──── QueryBuilder.cs
+│ │ └──── QueryManager.cs
+│ ├──── Register/
+│ │ ├──── BitMaskRegister.cs
+│ │ └──── ComponentTypeRegister.cs
+│ ├──── System/
+│ ├──── Tool/
+│ │ └──── Tool.cs
+└─└──── README.md
 ```
