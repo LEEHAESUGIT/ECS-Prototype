@@ -19,19 +19,22 @@
 # 사용
 1. ECSCore 폴더를 프로젝트 폴더에 삽입한다.
 2. C#10 이하 의 경우 GlobalUsing파일을 주석처리한다.
-3. 외부에서 ECSCore에 접근하기 위해서 public 메소드는 다음과 같다
+3. 외부에서 ECSCore에 접근하기 위해서 메소드는 다음과 같다
    ECSManager.cs
    + public Entity CreateEntity(ulong typeBitMask)
    + public Entity Init(Entity entity)
    + public ref T Get<T>(Entity entity)
    + public void Remove(Entity entity)
    + public bool Has(Entity entity)
+   + internal QueryBuilder Query()
    ComponentTypeRegister.cs
    + public static int GetID(Type type)
    + public static int GetID<T>()  
    BitMaskRegister.cs
    + public static ulong ToMask(int idx)
    + public static ulong BuildMask(params int[] idx)
+   Archetype.cs
+   + public int GetTypeIndex(int typeID)  
 ### Set
 1. Component폴더의 ComponentGroup.cs 파일 내부에 구조체형식으로 필요한 컴포넌트를 선언한다.
 ```
@@ -89,5 +92,30 @@ EXQuery = ecsMG.Query()
 ```
 EXQuery = ecsMG.Query()
           .withNone<EXComponent>()
+```
+3. Query조건으로 찾은 아키타입의 활용
+```
+foreach (var archetype in Query_FilterForCaculation.GetArchetype(ecsMG.entityManager))
+{
+	var EX_IDx = archetype.GetTypeIndex(EXID);
+	foreach (var chunk in archetype.Chunks)
+	{
+		var EX_Span = chunk.GetSpan<EXComponent>(EX_IDx);
+		for (int i = 0; i < chunk.ChunkCount; i++)
+		{
+			EX_Span[i].point = 2f;
+		}
+	}
+}
+```
+### Has
+1. 엔티티가 현재 존재하는 엔티티인지 확인하는 방법
+```
+if(ecsMG.Has(entity)){}
+```
+### Remove
+1. 엔티티를 삭제. 삭제시 청크배열 내부에서 엔티티의 위치에는 청크배열 마지막요소가 덮어 씌워진다 , 또한 엔티티의 제네레이션이 증가하며 기존의 엔티티와 구별하게 된다. 
+```
+ecsMG.Reove(entity);
 ```
 
