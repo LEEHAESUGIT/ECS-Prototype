@@ -1,34 +1,93 @@
-ECS(Entity_Component_System) 아키텍처 프로토타입(공부중)
+# ECS(Entity-Component-System)
++ Unity,Console 환경에서 사용 할 수 있는 경량 라이브러리 구현 프로젝트
++ OOP대비 성능 개선 검증 , 목표로 설계한 아키텍처 
 
-상태 - 진행중
+# 개발 환경
++ IDE : Visual Studio 2022
++ .Net8.0
++ Language : C#
++ Platform : x64
++ Dependencies : None (No external NuGet packages)
 
-Struct
+# 주요 기능
++ 클래스 기반 객체 구조 대신 컴포넌트 단위로 데이터를 분리하여 관리
++ 동일한 컴포넌트를 가진 엔티티를 아키타입으로 그룹화 하여 효율적으로 처리
++ 아키타입 내부에 컴포넌트를 청크 배열로 저장해, 연속된 메모리 구조를 통해 데이터 접근 성능 향상
++ 조건에 맞는 엔티티를 조회하여 일괄 처리
++ 객체 간 참조 대신 데이터 배열 기반으로 직접 접근하여 메모리 할당 및 GC 부담 감
 
-Entity
-Component
-ComponentGroup
-Interface
+# 사용
+1. ECSCore 폴더를 프로젝트 폴더에 삽입한다.
+2. C#10 이하 의 경우 GlobalUsing파일을 주석처리한다.
+3. 외부에서 ECSCore에 접근하기 위해서 public 메소드는 다음과 같다
+   ECSManager.cs
+   + public Entity CreateEntity(ulong typeBitMask)
+   + public Entity Init(Entity entity)
+   + public ref T Get<T>(Entity entity)
+   + public void Remove(Entity entity)
+   + public bool Has(Entity entity)
+   ComponentTypeRegister.cs
+   + public static int GetID(Type type)
+   + public static int GetID<T>()  
+   BitMaskRegister.cs
+   + public static ulong ToMask(int idx)
+   + public static ulong BuildMask(params int[] idx)
+### Set
+1. Component폴더의 ComponentGroup.cs 파일 내부에 구조체형식으로 필요한 컴포넌트를 선언한다.
+```
+internal struct EXComponent : IComponentData
+{
+	internal float point;
+}
+```
+2. ComponentSetting() 내부에 사용할 ComponentTypeRegister.Set<~>();사용해 컴포넌트들을 삽입 한다. NeedInit은 최상단에 고정한다.
+```
+internal static void SetComponent()
+{
+    // flag
+    ComponentTypeRegister.Set<NeedInit>(); // 무조건 항상 0번째
+    ComponentTypeRegister.Set<EXComponent>(); 
+    ComponentTypeRegister.IsFrozen = false;
+}
+```
+3. ECSManager를 선언한다.
+```
+ECSManager ecsMG = new ECSManager();
+```
+### EntityCreate
+1. 엔티티생성에 필요한 컴포넌트 타입들을 ComponentGroup.cs에서 저장했던 ID값을 토대로 비트마스크로 변환한다.
+```
+int EXID = ComponentTypeRegister.GetID<EXComponent>();
+ulong EXBitMask = BitMaskRegister.BuildMask(EXID);
+``` 
+2. 변환한 비트마스크를 사용하여 엔티티를 생성한다.
+```
+Entity entity = ecsMG.CreateEntity(EXBitMask);
+```
+3. 생성한 엔티티를 초기화 한다
+```
+ecsMG.Init(entity);
+```
+### Get
+1. ref를 사용하는 Get<T> 메소드를 사용해 참조할수 있다.
+```
+ref var EXComp = ref ecsMG.Get<EXComponent>(entity);
+EXComp.point = 1f;
+```
+2. Query를 사용해 조건에 맞는 아키타입을 찾을수 있다. 
+  +  withAll  (대상 모든 컴포넌트를 포함하는 아키타입)
+  +  withAny  (대상 컴포넌트를 하나라도 포함하는 아키타입)
+  +  withNone  (대상 컴포넌트를 포함하지 않는 아키타입)
+```
+EXQuery = ecsMG.Query()
+          .withAll<EXComponent>()
+```
+```
+EXQuery = ecsMG.Query()
+          .withAny<EXComponent>()
+```
+```
+EXQuery = ecsMG.Query()
+          .withNone<EXComponent>()
+```
 
-IEntity
-IComponentData
-ISystem
-Manager
-
-World(ECSManager)
-
-EntityManager
-
-EntityRecord
-Archetype
-
-Chunk
-
-Register
-
-ComponentTypeRegister
-ComponentID
-System +
-
-Tool
-
-Tool
