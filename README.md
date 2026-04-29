@@ -115,14 +115,17 @@ EXComp.point = 1f;
 ```
 EXQuery = ecsMG.Query()
           .withAll<EXComponent>()
+		  .Build();
 ```
 ```
 EXQuery = ecsMG.Query()
           .withAny<EXComponent>()
+		  .Build();
 ```
 ```
 EXQuery = ecsMG.Query()
           .withNone<EXComponent>()
+		  .Build();
 ```
 2. Query조건으로 찾은 아키타입의 활용
 ```
@@ -160,7 +163,7 @@ public static void EXSystem(ECSManager ecs)
     var EXID = ComponentTypeRegister.GetID<EXComponent>();
 
     var query = ecs.Query()
-                   .withAll<EXComponent>();
+                   .withAll<EXComponent>().Build();
 
     foreach (var archetype in query.GetArchetype(ecs.entityManager))
     {
