@@ -129,7 +129,7 @@ EXQuery = ecsMG.Query()
 ```
 2. Query조건으로 찾은 아키타입의 활용
 ```
-foreach (var archetype in Query_FilterForCaculation.GetArchetype(ecsMG.entityManager))
+foreach (var archetype in EXQuery.GetArchetype(ecsMG.entityManager))
 {
 	var EX_IDx = archetype.GetTypeIndex(EXID);
 	foreach (var chunk in archetype.Chunks)
@@ -165,7 +165,7 @@ public static void EXSystem(ECSManager ecs)
     var query = ecs.Query()
                    .withAll<EXComponent>().Build();
 
-    foreach (var archetype in query.GetArchetype(ecs.entityManager))
+    foreach (var archetype in EXQuery.GetArchetype(ecs.entityManager))
     {
         var EX_IDx = archetype.GetTypeIndex(EXID);
 
