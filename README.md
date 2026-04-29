@@ -162,7 +162,7 @@ public static void EXSystem(ECSManager ecs)
 {
     var EXID = ComponentTypeRegister.GetID<EXComponent>();
 
-    var query = ecs.Query()
+    var EXQuery = ecs.Query()
                    .withAll<EXComponent>().Build();
 
     foreach (var archetype in EXQuery.GetArchetype(ecs.entityManager))
