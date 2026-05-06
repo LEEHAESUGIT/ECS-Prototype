@@ -200,8 +200,20 @@ namespace LHS.ECS.Core
 			}
 			return true;
 		}
+
+		public bool ComponentHas<T>(Entity entity) where T : struct
+		{
+			if (!Has(entity))
+				return false;
+
+			int typeID = ComponentTypeRegister.GetID(typeof(T));
+			var record = entityManager._entityRecord[entity.ID];
+
+			return BitMaskRegister.IsIncludeTypeInBitMask(record.CapturedArchetype.typeMask, typeID);
+
+		}
 		#endregion
-		
+
 		internal QueryBuilder Query()
 		{
 			return new QueryBuilder(_QM);

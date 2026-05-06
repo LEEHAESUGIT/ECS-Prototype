@@ -54,7 +54,7 @@ namespace LHS.ECS.Core.Utils
 		}
 
 
-		internal static int GetID(Type type)
+		public static int GetID(Type type)
 		{
 			if (TypeToID.TryGetValue(type, out var ID))
 			{
@@ -62,7 +62,7 @@ namespace LHS.ECS.Core.Utils
 			}
 			throw new InvalidOperationException();
 		}
-		internal static int GetID<T>() where T : struct, IComponentData => GetID(typeof(T));
+		public static int GetID<T>() where T : struct, IComponentData => GetID(typeof(T));
 		internal static int GetSize(int typeID) => TypeInfos[typeID].Size;
 		internal static int GetSize<T>() where T : struct, IComponentData
 		{ 

@@ -9,14 +9,14 @@ namespace LHS.ECS.Core.Utils
 {
 	internal static class BitMaskRegister
 	{
-		internal static ulong ToMask(int idx)
+		public static ulong ToMask(int idx)
 		{
 			ulong typeMask = 0;
 
 			typeMask |= (1LU << idx);
 			return typeMask;
 		}
-		internal static ulong BuildMask(params int[] idx)
+		public static ulong BuildMask(params int[] idx)
 		{
 			ulong typeMask = 0;
 
